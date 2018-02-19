@@ -16,7 +16,7 @@ class GroupCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         groupCoverImageView.clipsToBounds = true
-        groupCoverImageView.layer.cornerRadius = 15
+        groupCoverImageView.layer.cornerRadius = 10
     }
     
 //    func configureCell(noodle: Noodle){

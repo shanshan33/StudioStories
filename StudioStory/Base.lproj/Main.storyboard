@@ -15,7 +15,7 @@
         </array>
     </customFonts>
     <scenes>
-        <!--Logaxone Stories-->
+        <!--loisirs créatifs-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="PhotoViewController" customModule="StudioStory" customModuleProvider="target" sceneMemberID="viewController">
@@ -43,26 +43,17 @@
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="nong-vang-449097" translatesAutoresizingMaskIntoConstraints="NO" id="fCV-Wd-tx5">
                                                     <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="INSPIRATION" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q5l-YS-Z4d">
-                                                    <rect key="frame" x="29" y="66.5" width="93" height="18"/>
-                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
-                                                    <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                             </subviews>
                                         </view>
                                         <constraints>
                                             <constraint firstItem="fCV-Wd-tx5" firstAttribute="leading" secondItem="qYq-oh-76F" secondAttribute="leading" id="3K7-8s-fmI"/>
-                                            <constraint firstItem="fCV-Wd-tx5" firstAttribute="centerX" secondItem="q5l-YS-Z4d" secondAttribute="centerX" id="7Xd-9F-0g6"/>
                                             <constraint firstAttribute="bottom" secondItem="fCV-Wd-tx5" secondAttribute="bottom" id="AEe-dU-lth"/>
                                             <constraint firstItem="fCV-Wd-tx5" firstAttribute="top" secondItem="qYq-oh-76F" secondAttribute="top" id="FA8-Iw-uhF"/>
                                             <constraint firstAttribute="trailing" secondItem="fCV-Wd-tx5" secondAttribute="trailing" id="Heb-wv-Ccc"/>
-                                            <constraint firstItem="fCV-Wd-tx5" firstAttribute="centerY" secondItem="q5l-YS-Z4d" secondAttribute="centerY" id="w9C-F4-sRo"/>
                                         </constraints>
                                         <size key="customSize" width="150" height="150"/>
                                         <connections>
                                             <outlet property="groupCoverImageView" destination="fCV-Wd-tx5" id="AcX-pw-m9h"/>
-                                            <outlet property="groupTitle" destination="q5l-YS-Z4d" id="Fni-5s-KVT"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -72,16 +63,16 @@
                                 </connections>
                             </collectionView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j18-WE-tM9" userLabel="AddPhotoView">
-                                <rect key="frame" x="0.0" y="567" width="375" height="100"/>
+                                <rect key="frame" x="0.0" y="587" width="375" height="80"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ajouter une photo" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="63q-Yf-CyC">
-                                        <rect key="frame" x="119" y="60" width="137" height="20"/>
+                                        <rect key="frame" x="119" y="51" width="137" height="20"/>
                                         <fontDescription key="fontDescription" name="DiLoiOS-45Light" family="DiLo iOS" pointSize="17"/>
                                         <color key="textColor" red="0.08235294118" green="0.49019607840000001" blue="0.98431372549999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ah2-9l-JPG">
-                                        <rect key="frame" x="170" y="17" width="35" height="35"/>
+                                        <rect key="frame" x="170" y="8" width="35" height="35"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="35" id="Vep-VH-pfI"/>
                                             <constraint firstAttribute="height" constant="35" id="ann-23-nXe"/>
@@ -95,8 +86,8 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="ah2-9l-JPG" firstAttribute="centerX" secondItem="63q-Yf-CyC" secondAttribute="centerX" id="FP6-Ux-FEp"/>
-                                    <constraint firstAttribute="bottom" secondItem="63q-Yf-CyC" secondAttribute="bottom" constant="20" id="NH1-UL-4fc"/>
-                                    <constraint firstAttribute="height" constant="100" id="Pi9-LS-ItQ"/>
+                                    <constraint firstAttribute="bottom" secondItem="63q-Yf-CyC" secondAttribute="bottom" constant="9" id="NH1-UL-4fc"/>
+                                    <constraint firstAttribute="height" constant="80" id="Pi9-LS-ItQ"/>
                                     <constraint firstItem="63q-Yf-CyC" firstAttribute="top" secondItem="ah2-9l-JPG" secondAttribute="bottom" constant="8" symbolic="YES" id="kHT-Xp-mDU"/>
                                     <constraint firstItem="63q-Yf-CyC" firstAttribute="centerX" secondItem="j18-WE-tM9" secondAttribute="centerX" id="lyb-L0-w8r"/>
                                 </constraints>
@@ -114,7 +105,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Logaxone Stories" largeTitleDisplayMode="always" id="vO9-3A-cek"/>
+                    <navigationItem key="navigationItem" title="loisirs créatifs" largeTitleDisplayMode="always" id="vO9-3A-cek"/>
                     <connections>
                         <outlet property="PhotosCollectionView" destination="QAS-cP-A2d" id="M01-cT-YQ8"/>
                     </connections>
