@@ -43,5 +43,9 @@
 	</array>
 	<key>NSCameraUsageDescription</key>
 	<string>used to add photos</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>use to access library</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>add photos to library</string>
 </dict>
 </plist>

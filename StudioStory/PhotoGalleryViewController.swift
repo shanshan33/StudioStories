@@ -28,14 +28,38 @@ class PhotoGalleryViewController: UIViewController {
     @IBAction func dismiss(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)
     }
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    override var previewActionItems: [UIPreviewActionItem] {
+        
+        let item1 = UIPreviewAction(title: "Save To Library", style: .default) {
+            (action, vc) in
+            UIImageWriteToSavedPhotosAlbum(self.pickedImage!, self, #selector(self.image(_:didFinishSavingWithError:contextInfo:)), nil)
+        }
+        
+        let item2 = UIPreviewAction(title: "Item2", style: .destructive) {
+            (action, vc) in
+            // run item 2 action
+        }
+        
+        return [item1, item2]
     }
-    */
 
+}
+
+
+extension PhotoGalleryViewController :  UIImagePickerControllerDelegate  {
+
+    
+    @objc func image(_ image: UIImage, didFinishSavingWithError error: Error?, contextInfo: UnsafeRawPointer) {
+        if let error = error {
+            // we got back an error!
+            let alert = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default))
+            present(alert, animated: true)
+        } else {
+            let alert = UIAlertController(title: "Saved!", message: "Image saved successfully", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default))
+            present(alert, animated: true)
+        }
+    }
 }

@@ -11,10 +11,6 @@ enum GroupSection {
     case Button
 }
 
-@available(iOS 9.0, *)
-public protocol UIPreviewActionItem : NSObjectProtocol {
-    var title: String { get }
-}
 
 import UIKit
 
@@ -44,6 +40,7 @@ class PhotoViewController: UIViewController, UIImagePickerControllerDelegate, UI
             self.PhotosCollectionView.reloadData()
         }
     }
+
     
     @IBAction func addPhotoButtonTaped(_ sender: UIButton) {
         photosPicker.viewController = self
@@ -73,6 +70,7 @@ class PhotoViewController: UIViewController, UIImagePickerControllerDelegate, UI
     }
 }
 
+
 extension PhotoViewController: UIViewControllerPreviewingDelegate {
     
     func previewingContext(_ previewingContext: UIViewControllerPreviewing, viewControllerForLocation location: CGPoint) -> UIViewController? {
@@ -96,18 +94,6 @@ extension PhotoViewController: UIViewControllerPreviewingDelegate {
   //      show(viewControllerToCommit, sender: self)
         present(viewControllerToCommit, animated: true, completion: nil)
     }
-    
-    func previewActionItems() -> [UIPreviewActionItem] {
-        
-        let likeAction = UIPreviewAction(title: "Like", style: .default) { (action, viewController) -> Void in
-            print("You liked the photo")
-        }
-        let deleteAction = UIPreviewAction(title: "Delete", style: .destructive) { (action, viewController) -> Void in
-            print("You deleted the photo")
-        }
-        return []
-    }
-    
 }
 
 extension PhotoViewController: UICollectionViewDataSource {
