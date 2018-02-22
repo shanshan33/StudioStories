@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="I1v-7w-NS6">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gwK-il-o6y">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -39,7 +39,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="nong-vang-449097" translatesAutoresizingMaskIntoConstraints="NO" id="fCV-Wd-tx5">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="haha" translatesAutoresizingMaskIntoConstraints="NO" id="fCV-Wd-tx5">
                                                     <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
                                                 </imageView>
                                             </subviews>
@@ -64,8 +64,8 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j18-WE-tM9" userLabel="AddPhotoView">
                                 <rect key="frame" x="0.0" y="587" width="375" height="80"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ajouter une photo" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="63q-Yf-CyC">
-                                        <rect key="frame" x="119" y="51" width="137" height="20"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add New Photo To Group" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="63q-Yf-CyC">
+                                        <rect key="frame" x="90" y="51" width="195" height="20"/>
                                         <fontDescription key="fontDescription" name="DiLoiOS-45Light" family="DiLo iOS" pointSize="17"/>
                                         <color key="textColor" red="0.08235294118" green="0.49019607840000001" blue="0.98431372549999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -179,11 +179,97 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="607-wx-diU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-92.799999999999997" y="234.78260869565219"/>
+            <point key="canvasLocation" x="-839" y="224"/>
+        </scene>
+        <!--Group View Controller-->
+        <scene sceneID="hS0-gr-yiE">
+            <objects>
+                <viewController id="gwK-il-o6y" customClass="GroupViewController" customModule="StudioStory" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Jl2-Cy-zV3">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backgroudRetangle" translatesAutoresizingMaskIntoConstraints="NO" id="dra-Jn-V3v">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="364"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="364" id="6mq-dN-NZ8"/>
+                                    <constraint firstAttribute="width" constant="375" id="DSf-lV-2Pu"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Studio_Skype" translatesAutoresizingMaskIntoConstraints="NO" id="YXv-4b-Dyt">
+                                <rect key="frame" x="149" y="70" width="77" height="77"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="77" id="RgD-eV-5pU"/>
+                                    <constraint firstAttribute="width" constant="77" id="Xvj-lp-yAi"/>
+                                </constraints>
+                            </imageView>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="K8E-5e-syA">
+                                <rect key="frame" x="0.0" y="197" width="375" height="400"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="375" id="JL0-tS-2Gv"/>
+                                    <constraint firstAttribute="height" constant="400" id="vCy-Dr-Asj"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="3Ur-x2-Yv6">
+                                    <size key="itemSize" width="271" height="276"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="30" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="GroupPreviewCell" id="paM-TQ-vW7" customClass="GroupPreviewCell" customModule="StudioStory" customModuleProvider="target">
+                                        <rect key="frame" x="30" y="10" width="320" height="380"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="380"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </view>
+                                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <size key="customSize" width="320" height="380"/>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="gwK-il-o6y" id="V8l-Rg-pfx"/>
+                                    <outlet property="delegate" destination="gwK-il-o6y" id="uD3-rv-dEv"/>
+                                </connections>
+                            </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Wn-qP-iwq">
+                                <rect key="frame" x="162" y="607" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="gZb-H1-9vZ"/>
+                                    <constraint firstAttribute="height" constant="50" id="ycP-vL-d45"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="addPhotoButton"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="K8E-5e-syA" firstAttribute="trailing" secondItem="oR8-Xr-RZb" secondAttribute="trailing" id="2zd-eW-YWS"/>
+                            <constraint firstItem="K8E-5e-syA" firstAttribute="leading" secondItem="oR8-Xr-RZb" secondAttribute="leading" id="OBE-da-gzv"/>
+                            <constraint firstItem="2Wn-qP-iwq" firstAttribute="centerX" secondItem="oR8-Xr-RZb" secondAttribute="centerX" id="PPk-Ye-bzx"/>
+                            <constraint firstItem="YXv-4b-Dyt" firstAttribute="top" secondItem="oR8-Xr-RZb" secondAttribute="top" constant="50" id="VyX-33-gG2"/>
+                            <constraint firstItem="oR8-Xr-RZb" firstAttribute="bottom" secondItem="K8E-5e-syA" secondAttribute="bottom" constant="70" id="Whf-tP-c2C"/>
+                            <constraint firstItem="dra-Jn-V3v" firstAttribute="top" secondItem="Jl2-Cy-zV3" secondAttribute="top" id="beT-kS-oBd"/>
+                            <constraint firstItem="2Wn-qP-iwq" firstAttribute="top" secondItem="K8E-5e-syA" secondAttribute="bottom" constant="10" id="iWC-3d-OGX"/>
+                            <constraint firstItem="dra-Jn-V3v" firstAttribute="leading" secondItem="Jl2-Cy-zV3" secondAttribute="leading" id="sFg-i7-5sc"/>
+                            <constraint firstItem="YXv-4b-Dyt" firstAttribute="centerX" secondItem="oR8-Xr-RZb" secondAttribute="centerX" id="w8f-oE-7D2"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="oR8-Xr-RZb"/>
+                    </view>
+                    <connections>
+                        <outlet property="groupCollectionView" destination="K8E-5e-syA" id="vid-qo-qJB"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1Mv-PE-ORr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-34.399999999999999" y="-214.54272863568218"/>
         </scene>
     </scenes>
     <resources>
+        <image name="Studio_Skype" width="77" height="77"/>
+        <image name="addPhotoButton" width="64" height="64"/>
         <image name="add_photo" width="35" height="35"/>
-        <image name="nong-vang-449097" width="3456" height="2304"/>
+        <image name="backgroudRetangle" width="375" height="364"/>
+        <image name="haha" width="3456" height="2304"/>
     </resources>
 </document>
