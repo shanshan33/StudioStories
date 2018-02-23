@@ -14,17 +14,11 @@ class GroupViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-//        let layer = UIView(frame: CGRect(x: 0, y: 0, width: 375, height: 364))
-//        let gradient = CAGradientLayer()
-//        gradient.frame = CGRect(x: 0, y: 0, width: 375, height: 364)
-//        gradient.colors = [UIColor.black.cgColor,    UIColor.black.cgColor]
-//        gradient.locations = [0, 1]
-//        gradient.startPoint = CGPoint(x: 0.56, y: -0.82)
-//        gradient.endPoint = CGPoint(x: 0.59, y: 1)
-//        layer.layer.addSublayer(gradient)
-//        self.view.addSubview(layer)
-        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.navigationBar.isHidden = true
     }
 
     override func didReceiveMemoryWarning() {
@@ -34,7 +28,12 @@ class GroupViewController: UIViewController {
 }
 
 extension GroupViewController: UICollectionViewDelegate {
-    
+ 
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: 320, height: 380)
+    }
 }
 
 extension GroupViewController: UICollectionViewDataSource {

@@ -31,7 +31,7 @@ class PhotoPageViewController: UIPageViewController {
         
         self.dataSource = self
         self.delegate   = self
-        
+        self.navigationController?.navigationBar.isHidden = false
         if let firstPhoto = pages.first
         {
             setViewControllers([firstPhoto], direction: .forward, animated: true, completion: nil)
