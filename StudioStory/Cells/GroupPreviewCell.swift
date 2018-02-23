@@ -17,6 +17,8 @@ class GroupPreviewCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         configCellUI()
+        
+
     }
     
     private func configCellUI() {
@@ -48,6 +50,14 @@ class GroupPreviewCell: UICollectionViewCell {
 //        layer.addSubview(shadow2)
 //        self.addSubview(layer)
 //
+        for subview in imagePreviewStackView.subviews {
+            for item in subview.subviews {
+                if let image = item as? UIImageView{
+                    image.layer.cornerRadius = 20
+                }
+            }
+        }
+        
         self.layer.cornerRadius = 16
         self.contentView.layer.cornerRadius = 16
         self.contentView.layer.borderWidth = 1.0

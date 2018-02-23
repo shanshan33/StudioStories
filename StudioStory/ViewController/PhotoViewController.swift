@@ -23,6 +23,11 @@ class PhotoViewController: UIViewController, UIImagePickerControllerDelegate, UI
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setNavigationBarAppearence()
+        PhotosCollectionView.layer.cornerRadius = 16
+
+        self.navigationController?.navigationBar.isHidden = false
+        
         let longPress = UILongPressGestureRecognizer(target: self, action: #selector(longPressToDelete))
         longPress.minimumPressDuration = 3
         longPress.delaysTouchesBegan = true
@@ -31,6 +36,12 @@ class PhotoViewController: UIViewController, UIImagePickerControllerDelegate, UI
             registerForPreviewing(with: self, sourceView: PhotosCollectionView)
         }
         PhotosCollectionView.addGestureRecognizer(longPress)
+    }
+    
+    private func setNavigationBarAppearence() {
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.isTranslucent = true
     }
     
     override func viewWillAppear(_ animated: Bool) {

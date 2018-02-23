@@ -113,17 +113,14 @@
 			children = (
 				F3481E58203B04FA00B68183 /* AppDelegate.swift */,
 				F3481E5C203B04FA00B68183 /* Main.storyboard */,
+				F3E2250C20406AA8007DB05C /* Cells */,
+				F3E2250B20406A91007DB05C /* ViewController */,
 				F3481E62203B04FA00B68183 /* Assets.xcassets */,
 				F3481E64203B04FA00B68183 /* LaunchScreen.storyboard */,
 				F3481E67203B04FA00B68183 /* Info.plist */,
 				F3481E5F203B04FA00B68183 /* StudioStory.xcdatamodeld */,
-				F3481E89203B0A2F00B68183 /* GroupCell.swift */,
 				F3481E8B203B0DD400B68183 /* PhotosPicker.swift */,
 				F3481E8D203C56BA00B68183 /* PhotoPageViewController.swift */,
-				F3481E8F203C5C1900B68183 /* PhotoViewController.swift */,
-				F3481E91203C5C5600B68183 /* PhotoGalleryViewController.swift */,
-				F3AE53BE203F18DD007FE50D /* GroupViewController.swift */,
-				F3AE53C0203F1DAA007FE50D /* GroupPreviewCell.swift */,
 			);
 			path = StudioStory;
 			sourceTree = "<group>";
@@ -144,6 +141,25 @@
 				F3481E7D203B04FA00B68183 /* Info.plist */,
 			);
 			path = StudioStoryUITests;
+			sourceTree = "<group>";
+		};
+		F3E2250B20406A91007DB05C /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				F3AE53BE203F18DD007FE50D /* GroupViewController.swift */,
+				F3481E8F203C5C1900B68183 /* PhotoViewController.swift */,
+				F3481E91203C5C5600B68183 /* PhotoGalleryViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		F3E2250C20406AA8007DB05C /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				F3481E89203B0A2F00B68183 /* GroupCell.swift */,
+				F3AE53C0203F1DAA007FE50D /* GroupPreviewCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
