@@ -21,11 +21,14 @@ class PhotoViewController: UIViewController, UIImagePickerControllerDelegate, UI
     @IBOutlet weak var addPhotoView: UIView!
     @IBOutlet weak var PhotosCollectionView: UICollectionView!
     
+    @IBOutlet weak var groupPhotoViewHeader: UIView!
+    @IBOutlet weak var groupPhotosView: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setNavigationBarAppearence()
-        PhotosCollectionView.layer.cornerRadius = 16
-
+        groupPhotosView.layer.cornerRadius = 16
+        groupPhotoViewHeader.layer.cornerRadius = 16
         self.navigationController?.navigationBar.isHidden = false
         
         let longPress = UILongPressGestureRecognizer(target: self, action: #selector(longPressToDelete))
@@ -36,6 +39,10 @@ class PhotoViewController: UIViewController, UIImagePickerControllerDelegate, UI
             registerForPreviewing(with: self, sourceView: PhotosCollectionView)
         }
         PhotosCollectionView.addGestureRecognizer(longPress)
+        
+        if let layout = PhotosCollectionView.collectionViewLayout as? PrinterestLayout {
+            layout.delegate = self
+        }
     }
     
     private func setNavigationBarAppearence() {
@@ -49,6 +56,7 @@ class PhotoViewController: UIViewController, UIImagePickerControllerDelegate, UI
         photosPicker.imagePickedBlock = { (image) in
             self.pictures.append(image)
             self.PhotosCollectionView.reloadData()
+            self.viewWillLayoutSubviews()
         }
     }
 
@@ -78,6 +86,11 @@ class PhotoViewController: UIViewController, UIImagePickerControllerDelegate, UI
         guard let indexPath = sender as? IndexPath else { return }
         guard let photoGalleryViewController  = segue.destination as? PhotoGalleryViewController else { return }
         photoGalleryViewController.pickedImage = pictures[indexPath.row]
+    }
+    
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        PhotosCollectionView.collectionViewLayout.invalidateLayout()
     }
 }
 
@@ -128,6 +141,17 @@ extension PhotoViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         performSegue(withIdentifier: "toGallery", sender: indexPath)
 
+    }
+}
+
+//MARK: - PINTEREST LAYOUT DELEGATE
+extension PhotoViewController: PinterestLayoutDelegate {
+    func collectionView(_ collectionView: UICollectionView, heightForPhotoAtIndexPath indexPath:IndexPath) -> CGFloat {
+        return pictures[indexPath.item].size.height
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, widthForPhotoAtIndexPath indexPath: IndexPath) -> CGFloat {
+        return pictures[indexPath.item].size.width
     }
     
 }
