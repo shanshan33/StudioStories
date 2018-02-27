@@ -7,17 +7,39 @@
 //
 
 import UIKit
+import QuartzCore
 
 class PhotoGalleryViewController: UIViewController {
 
     @IBOutlet weak var photoImageView: UIImageView!
+    @IBOutlet weak var photoBackgroundView: UIView!
     
     var pickedImage: UIImage?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         photoImageView.image = pickedImage
+        // makeRoundImage(image: pickedImage!, radius: 16)
+        photoImageView.layer.cornerRadius = 16
+        photoImageView.clipsToBounds = true
     }
+    
+    private func makeRoundImage(image: UIImage, radius: CGFloat) -> UIImage {
+        let layer = CALayer()
+        layer.frame = CGRect(origin: CGPoint(x: 0, y: 0), size: CGSize(width: image.size.width, height: image.size.height))
+        layer.contents = image.cgImage
+        layer.masksToBounds = true
+        layer.cornerRadius = radius
+        
+        UIGraphicsBeginImageContext(image.size)
+        layer.render(in: UIGraphicsGetCurrentContext()!)
+        
+        let roundImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        return roundImage!
+        
+         }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -49,7 +71,6 @@ class PhotoGalleryViewController: UIViewController {
 
 extension PhotoGalleryViewController :  UIImagePickerControllerDelegate  {
 
-    
     @objc func image(_ image: UIImage, didFinishSavingWithError error: Error?, contextInfo: UnsafeRawPointer) {
         if let error = error {
             // we got back an error!
