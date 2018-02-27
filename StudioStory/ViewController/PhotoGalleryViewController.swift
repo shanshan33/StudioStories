@@ -9,12 +9,15 @@
 import UIKit
 import QuartzCore
 
-class PhotoGalleryViewController: UIViewController {
+class PhotoGalleryViewController: UIViewController, UIGestureRecognizerDelegate {
 
     @IBOutlet weak var photoImageView: UIImageView!
     @IBOutlet weak var photoBackgroundView: UIView!
+    @IBOutlet weak var closeButton: UIButton!
+    @IBOutlet weak var infoStackView: UIStackView!
     
     var pickedImage: UIImage?
+    var frameOrigin: CGRect?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,6 +25,37 @@ class PhotoGalleryViewController: UIViewController {
         // makeRoundImage(image: pickedImage!, radius: 16)
         photoImageView.layer.cornerRadius = 16
         photoImageView.clipsToBounds = true
+        
+        let tapToFullScreen = UITapGestureRecognizer(target: self, action: #selector(tapPhotoToFullScreen))
+        tapToFullScreen.delegate = self
+        photoImageView.addGestureRecognizer(tapToFullScreen)
+        frameOrigin = photoImageView.frame
+   
+    }
+    
+    @objc func tapPhotoToFullScreen() {
+        photoImageView.frame = UIScreen.main.bounds
+        photoImageView.contentMode = .scaleAspectFit
+        photoImageView.backgroundColor = .black
+        photoImageView.layer.cornerRadius = 0
+        closeButton.isHidden = true
+        infoStackView.isHidden = true
+        let tapToDismiss = UITapGestureRecognizer(target: self, action: #selector(dismissFullscreenImage))
+        tapToDismiss.delegate = self
+        photoImageView.addGestureRecognizer(tapToDismiss)
+    }
+    
+    @objc func dismissFullscreenImage(_ sender: UITapGestureRecognizer) {
+        closeButton.isHidden = false
+        infoStackView.isHidden = false
+        photoImageView.frame = frameOrigin!
+        photoImageView.contentMode = .scaleAspectFill
+        photoImageView.backgroundColor = .clear
+        photoImageView.layer.cornerRadius = 16
+        
+        let tapToFullScreen = UITapGestureRecognizer(target: self, action: #selector(tapPhotoToFullScreen))
+        tapToFullScreen.delegate = self
+        photoImageView.addGestureRecognizer(tapToFullScreen)
     }
     
     private func makeRoundImage(image: UIImage, radius: CGFloat) -> UIImage {

@@ -248,6 +248,8 @@
                         <viewLayoutGuide key="safeArea" id="7LL-3P-HWa"/>
                     </view>
                     <connections>
+                        <outlet property="closeButton" destination="Ouo-gM-JxK" id="Wip-Vy-orR"/>
+                        <outlet property="infoStackView" destination="ICs-qZ-taY" id="krK-yL-CBA"/>
                         <outlet property="photoImageView" destination="TRc-kg-SCN" id="mOk-i9-OSU"/>
                     </connections>
                 </viewController>
