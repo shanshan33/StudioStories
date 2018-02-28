@@ -1,5 +1,5 @@
 //
-//  GroupViewController.swift
+//  GroupsPreviewViewController.swift
 //  StudioStory
 //
 //  Created by Shanshan Zhao on 22/02/2018.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class GroupViewController: UIViewController {
+class GroupsPreviewViewController: UIViewController {
 
     @IBOutlet weak var groupCollectionView: UICollectionView!
     
@@ -41,7 +41,7 @@ class GroupViewController: UIViewController {
     }
 }
 
-extension GroupViewController: UICollectionViewDelegate {
+extension GroupsPreviewViewController: UICollectionViewDelegate {
  
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
@@ -59,7 +59,7 @@ extension GroupViewController: UICollectionViewDelegate {
     }
 }
 
-extension GroupViewController: UICollectionViewDataSource {
+extension GroupsPreviewViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 5
     }

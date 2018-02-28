@@ -256,10 +256,10 @@
             </objects>
             <point key="canvasLocation" x="2045.5999999999999" y="-215.44227886056973"/>
         </scene>
-        <!--Group View Controller-->
+        <!--Groups Preview View Controller-->
         <scene sceneID="hS0-gr-yiE">
             <objects>
-                <viewController id="gwK-il-o6y" customClass="GroupViewController" customModule="StudioStory" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="gwK-il-o6y" customClass="GroupsPreviewViewController" customModule="StudioStory" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Jl2-Cy-zV3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
