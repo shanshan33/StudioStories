@@ -283,8 +283,50 @@
                                     <inset key="sectionInset" minX="25" minY="0.0" maxX="0.0" maxY="64"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="GroupPreviewCell" id="paM-TQ-vW7" customClass="GroupPreviewCell" customModule="StudioStory" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="EmptyGroupCell" id="61J-kC-Ipk" customClass="EmptyGroupCell" customModule="StudioStory" customModuleProvider="target">
                                         <rect key="frame" x="25" y="21.5" width="325" height="386"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="325" height="386"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New Album" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XBL-hg-2am">
+                                                    <rect key="frame" x="20" y="0.0" width="129" height="50"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="50" id="K9f-tJ-ZhM"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                                    <color key="textColor" red="0.79559785127639771" green="0.79620712995529175" blue="0.79569226503372192" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_AddPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="pmk-gR-ICR">
+                                                    <rect key="frame" x="118" y="126" width="90" height="90"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="90" id="NCU-93-uqw"/>
+                                                        <constraint firstAttribute="width" constant="90" id="UTj-wm-hKP"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Click to make your first album ! " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bRp-7e-JDI">
+                                                    <rect key="frame" x="42" y="239" width="240" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.80268329381942749" green="0.80329757928848267" blue="0.80277836322784424" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </view>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="XBL-hg-2am" firstAttribute="top" secondItem="61J-kC-Ipk" secondAttribute="top" id="IPe-4l-ROA"/>
+                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="XBL-hg-2am" secondAttribute="trailing" symbolic="YES" id="Wnx-Gd-Pes"/>
+                                            <constraint firstItem="pmk-gR-ICR" firstAttribute="top" secondItem="XBL-hg-2am" secondAttribute="bottom" constant="76" id="fUs-2F-I7i"/>
+                                            <constraint firstItem="bRp-7e-JDI" firstAttribute="top" secondItem="pmk-gR-ICR" secondAttribute="bottom" constant="23" id="hGE-hX-Ndq"/>
+                                            <constraint firstItem="bRp-7e-JDI" firstAttribute="centerX" secondItem="61J-kC-Ipk" secondAttribute="centerX" id="jNq-69-npu"/>
+                                            <constraint firstItem="XBL-hg-2am" firstAttribute="leading" secondItem="61J-kC-Ipk" secondAttribute="leading" constant="20" id="vog-gl-3Do"/>
+                                            <constraint firstItem="pmk-gR-ICR" firstAttribute="centerX" secondItem="61J-kC-Ipk" secondAttribute="centerX" id="yi2-TA-n86"/>
+                                        </constraints>
+                                    </collectionViewCell>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="GroupPreviewCell" id="paM-TQ-vW7" customClass="GroupPreviewCell" customModule="StudioStory" customModuleProvider="target">
+                                        <rect key="frame" x="365" y="21.5" width="325" height="386"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                             <rect key="frame" x="0.0" y="0.0" width="325" height="386"/>
@@ -443,8 +485,8 @@
                                             <action selector="addNewGroup:" destination="gwK-il-o6y" eventType="touchUpInside" id="Src-GD-ymo"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add Group" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N8R-O9-Crl">
-                                        <rect key="frame" x="27" y="64" width="52" height="12"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add Album" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N8R-O9-Crl">
+                                        <rect key="frame" x="26.5" y="64" width="53" height="12"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="12" id="7G7-3f-5Wm"/>
                                         </constraints>
@@ -542,9 +584,10 @@
         <image name="Studio_Skype" width="64" height="92"/>
         <image name="addGroup" width="36" height="32"/>
         <image name="addPhotoButton" width="74" height="74"/>
-        <image name="backgroudRetangle" width="375" height="364"/>
+        <image name="backgroudRetangle" width="375" height="391"/>
         <image name="close" width="400" height="400"/>
         <image name="haha" width="3456" height="2304"/>
+        <image name="ic_AddPhoto" width="90" height="90"/>
         <image name="newidea" width="36" height="39"/>
     </resources>
 </document>
