@@ -330,6 +330,9 @@
                                             <constraint firstItem="bRp-7e-JDI" firstAttribute="centerX" secondItem="61J-kC-Ipk" secondAttribute="centerX" id="jNq-69-npu"/>
                                             <constraint firstItem="pmk-gR-ICR" firstAttribute="centerX" secondItem="61J-kC-Ipk" secondAttribute="centerX" id="yi2-TA-n86"/>
                                         </constraints>
+                                        <connections>
+                                            <outlet property="groupTitleLabel" destination="UAr-3n-5CF" id="aZC-A5-i37"/>
+                                        </connections>
                                     </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="GroupPreviewCell" id="paM-TQ-vW7" customClass="GroupPreviewCell" customModule="StudioStory" customModuleProvider="target">
                                         <rect key="frame" x="365" y="21.5" width="325" height="386"/>
