@@ -19,10 +19,4 @@ class GroupCell: UICollectionViewCell {
         groupCoverImageView.layer.cornerRadius = 10
     }
     
-//    func configureCell(noodle: Noodle){
-//        noodleImageView.image = noodle.image
-//        noodleNameLabel.text  = noodle.title
-//        restaurantLabel.text  = noodle.restaurantName
-//    }
-    
 }

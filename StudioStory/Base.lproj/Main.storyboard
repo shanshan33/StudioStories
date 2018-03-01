@@ -296,7 +296,6 @@
                                                         <constraint firstAttribute="height" constant="50" id="K9f-tJ-ZhM"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
-                                                    <color key="textColor" red="0.79559785127639771" green="0.79620712995529175" blue="0.79569226503372192" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_AddPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="pmk-gR-ICR">
