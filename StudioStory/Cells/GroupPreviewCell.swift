@@ -19,6 +19,9 @@ class GroupPreviewCell: UICollectionViewCell {
         configCellUI()
     }
     
+    func setCell(group: Group) {
+        groupTitleLabel.text = group.name
+    }
     private func configCellUI() {
         for subview in imagePreviewStackView.subviews {
             for item in subview.subviews {
@@ -30,10 +33,8 @@ class GroupPreviewCell: UICollectionViewCell {
         
         self.layer.cornerRadius = 16
         self.contentView.layer.cornerRadius = 16
-  //      self.contentView.layer.borderWidth = 1.0
     
         self.contentView.layer.borderColor = UIColor.clear.cgColor
- //       self.contentView.layer.masksToBounds = true
         self.layer.shadowColor = UIColor(red:0, green:0, blue:0, alpha:0.15).cgColor
 
         self.layer.shadowOffset = CGSize(width: 0, height: 8.0)
@@ -41,6 +42,5 @@ class GroupPreviewCell: UICollectionViewCell {
         self.layer.shadowOpacity = 1
         self.layer.masksToBounds = false
         self.layer.shadowPath = UIBezierPath(roundedRect:self.bounds, cornerRadius:self.contentView.layer.cornerRadius).cgPath
-        
     }
 }

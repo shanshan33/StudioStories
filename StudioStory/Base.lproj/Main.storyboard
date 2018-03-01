@@ -324,6 +324,9 @@
                                             <constraint firstItem="XBL-hg-2am" firstAttribute="leading" secondItem="61J-kC-Ipk" secondAttribute="leading" constant="20" id="vog-gl-3Do"/>
                                             <constraint firstItem="pmk-gR-ICR" firstAttribute="centerX" secondItem="61J-kC-Ipk" secondAttribute="centerX" id="yi2-TA-n86"/>
                                         </constraints>
+                                        <connections>
+                                            <outlet property="groupTitleLabel" destination="XBL-hg-2am" id="VnU-hM-XIG"/>
+                                        </connections>
                                     </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="GroupPreviewCell" id="paM-TQ-vW7" customClass="GroupPreviewCell" customModule="StudioStory" customModuleProvider="target">
                                         <rect key="frame" x="365" y="21.5" width="325" height="386"/>
