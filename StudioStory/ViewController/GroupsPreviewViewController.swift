@@ -13,7 +13,7 @@ enum CellType {
     case NewGroup
 }
 
-class GroupsPreviewViewController: UIViewController {
+class GroupsPreviewViewController: UIViewController, UIScrollViewDelegate{
 
     @IBOutlet weak var groupCollectionView: UICollectionView!
     
@@ -37,22 +37,61 @@ class GroupsPreviewViewController: UIViewController {
     }
 
     @IBAction func addNewGroup(_ sender: UIButton) {
-        var visibleRect = CGRect()
-        visibleRect.origin = groupCollectionView.contentOffset
-        visibleRect.size = groupCollectionView.bounds.size
         
-        let visiblePoint = CGPoint(x: visibleRect.midX, y: visibleRect.midY)
-        guard let visibleIndexPath = groupCollectionView.indexPathForItem(at: visiblePoint) else { return }
-        newGroupIndexPath = visibleIndexPath
-        
+        newGroupIndexPath = self.getNearestVisiableIndexPath(collectionView: groupCollectionView)
         self.groupCollectionView?.performBatchUpdates({
             groups?.append(Group(name: "New Album", photos: nil))
             self.groupCollectionView?.insertItems(at: [newGroupIndexPath!])
         }, completion: nil)
     }
     
+    private func getNearestVisiableIndexPath(collectionView: UICollectionView) -> IndexPath? {
+        
+        var visibleRect = CGRect()
+        visibleRect.origin = groupCollectionView.contentOffset
+        visibleRect.size = groupCollectionView.bounds.size
+        
+        let visiblePoint = CGPoint(x: visibleRect.midX, y: visibleRect.midY)
+        guard let visibleIndexPath = collectionView.indexPathForItem(at: visiblePoint) else { return nil}
+        return visibleIndexPath
+    }
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        if (scrollView == groupCollectionView) {
+            snapToNearestVisiableCell(scrollView as! UICollectionView)
+        }
+    }
+
+    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        snapToNearestVisiableCell(scrollView as! UICollectionView)
+    }
+    
+    
+    func snapToNearestVisiableCell(_ collectionView: UICollectionView) {
+
+        let visibleCenterPositionOfScrollView = Float(collectionView.contentOffset.x + (collectionView.bounds.size.width / 2))
+        var closestCellIndex = -1
+        var closestDistance: Float = .greatestFiniteMagnitude
+        for i in 0..<collectionView.visibleCells.count {
+            let cell = collectionView.visibleCells[i]
+            let cellWidth = cell.bounds.size.width
+            let cellCenter = Float(cell.frame.origin.x + cellWidth / 2)
+            
+            // Now calculate closest cell
+            let distance: Float = fabsf(visibleCenterPositionOfScrollView - cellCenter)
+            if distance < closestDistance {
+                closestDistance = distance
+                closestCellIndex = collectionView.indexPath(for: cell)!.row
+            }
+        }
+        if closestCellIndex != -1 {
+            collectionView.scrollToItem(at: IndexPath(row: closestCellIndex, section: 0), at: .centeredHorizontally, animated: true)
+        }
+        
     }
 }
 
@@ -63,15 +102,7 @@ extension GroupsPreviewViewController: UICollectionViewDelegate {
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: 325, height: 386)
     }
-    
-    
-    
-    private func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
-        if (scrollView == groupCollectionView) {
-           
-            
-        }
-    }
+
 }
 
 extension GroupsPreviewViewController: UICollectionViewDataSource {
