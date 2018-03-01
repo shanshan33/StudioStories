@@ -60,16 +60,16 @@ class GroupsPreviewViewController: UIViewController, UIScrollViewDelegate{
         super.didReceiveMemoryWarning()
     }
 
-    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-        if (scrollView == groupCollectionView) {
-            snapToNearestVisiableCell(scrollView as! UICollectionView)
-        }
-    }
-
+//    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+//        if (scrollView == groupCollectionView) {
+//            snapToNearestVisiableCell(scrollView as! UICollectionView)
+//        }
+//    }
+//
     func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
         snapToNearestVisiableCell(scrollView as! UICollectionView)
     }
-    
+
     
     func snapToNearestVisiableCell(_ collectionView: UICollectionView) {
 

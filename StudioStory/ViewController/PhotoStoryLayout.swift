@@ -8,15 +8,15 @@
 
 import UIKit
 
-protocol PinterestLayoutDelegate: class {
+protocol PhotoStoryLayoutDelegate: class {
     func collectionView(_ collectionView:UICollectionView, heightForPhotoAtIndexPath indexPath:IndexPath) -> CGFloat
     func collectionView(_ collectionView: UICollectionView, widthForPhotoAtIndexPath indexPath: IndexPath) -> CGFloat
 
 }
 
-class PrinterestLayout: UICollectionViewLayout {
+class PhotoStoryLayout: UICollectionViewLayout {
     
-    weak var delegate: PinterestLayoutDelegate!
+    weak var delegate: PhotoStoryLayoutDelegate!
     fileprivate var numberOfColumns = 2
     fileprivate var cellPadding: CGFloat = 25
     

@@ -6,11 +6,6 @@
 //  Copyright © 2018 Shanshan Zhao. All rights reserved.
 //
 
-enum GroupSection {
-    case photo
-    case Button
-}
-
 
 import UIKit
 
@@ -20,9 +15,14 @@ class PhotoViewController: UIViewController, UIImagePickerControllerDelegate, UI
     var pictures: [UIImage] = []
     @IBOutlet weak var addPhotoView: UIView!
     @IBOutlet weak var PhotosCollectionView: UICollectionView!
-    
     @IBOutlet weak var groupPhotoViewHeader: UIView!
     @IBOutlet weak var groupPhotosView: UIView!
+    
+    @IBOutlet weak var groupTitleTextField: UITextField! {
+        didSet {
+            groupTitleTextField.delegate = self
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,8 +40,12 @@ class PhotoViewController: UIViewController, UIImagePickerControllerDelegate, UI
         }
         PhotosCollectionView.addGestureRecognizer(longPress)
         
-        if let layout = PhotosCollectionView.collectionViewLayout as? PrinterestLayout {
+        if let layout = PhotosCollectionView.collectionViewLayout as? PhotoStoryLayout {
             layout.delegate = self
+        }
+        
+        if (groupTitleTextField.text?.isEmpty)! {
+            groupTitleTextField.becomeFirstResponder()
         }
     }
     
@@ -91,6 +95,31 @@ class PhotoViewController: UIViewController, UIImagePickerControllerDelegate, UI
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
         PhotosCollectionView.collectionViewLayout.invalidateLayout()
+    }
+}
+
+extension PhotoViewController: UITextFieldDelegate {
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        
+    }
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        
+    }
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+        return true
+    }
+    func textFieldShouldClear(_ textField: UITextField) -> Bool {
+        return true
+    }
+    func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
+        return true
+    }
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        return true
+    }
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder();
+        return true
     }
 }
 
@@ -145,7 +174,7 @@ extension PhotoViewController: UICollectionViewDelegate {
 }
 
 //MARK: - PINTEREST LAYOUT DELEGATE
-extension PhotoViewController: PinterestLayoutDelegate {
+extension PhotoViewController: PhotoStoryLayoutDelegate {
     func collectionView(_ collectionView: UICollectionView, heightForPhotoAtIndexPath indexPath:IndexPath) -> CGFloat {
         return pictures[indexPath.item].size.height
     }

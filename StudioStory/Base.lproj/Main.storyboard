@@ -31,7 +31,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="54" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zWh-0M-d7y">
-                                                <rect key="frame" x="325" y="18" width="25" height="24"/>
+                                                <rect key="frame" x="322" y="18" width="28" height="24"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="24" id="g0h-yH-BvN"/>
                                                 </constraints>
@@ -39,34 +39,25 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Group Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A3I-3a-waL" userLabel="groupName">
-                                                <rect key="frame" x="25" y="15" width="140" height="30"/>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="New Album" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4yl-gv-D37">
+                                                <rect key="frame" x="20" y="15" width="287" height="30"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="30" id="Cko-8D-G9T"/>
+                                                    <constraint firstAttribute="width" constant="287" id="OeL-KW-a4X"/>
+                                                    <constraint firstAttribute="height" constant="30" id="j7Y-WQ-dgj"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                                 <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yZd-aP-FKE">
-                                                <rect key="frame" x="169" y="21" width="36" height="25"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="25" id="2EW-aV-el4"/>
-                                                    <constraint firstAttribute="width" constant="36" id="Dn0-sB-X9r"/>
-                                                </constraints>
-                                                <state key="normal" title="Edit"/>
-                                            </button>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstItem="A3I-3a-waL" firstAttribute="leading" secondItem="i1d-6Y-hvp" secondAttribute="leading" constant="25" id="1mp-39-rWa"/>
+                                            <constraint firstItem="zWh-0M-d7y" firstAttribute="leading" secondItem="4yl-gv-D37" secondAttribute="trailing" constant="15" id="0iI-53-EWE"/>
                                             <constraint firstItem="zWh-0M-d7y" firstAttribute="centerY" secondItem="i1d-6Y-hvp" secondAttribute="centerY" id="BGv-VH-WBV"/>
-                                            <constraint firstItem="yZd-aP-FKE" firstAttribute="centerX" secondItem="i1d-6Y-hvp" secondAttribute="centerX" id="GF6-VF-5M1"/>
-                                            <constraint firstItem="yZd-aP-FKE" firstAttribute="baseline" secondItem="A3I-3a-waL" secondAttribute="baseline" id="LOb-Hn-iDh"/>
+                                            <constraint firstItem="4yl-gv-D37" firstAttribute="leading" secondItem="i1d-6Y-hvp" secondAttribute="leading" constant="20" id="MCv-ei-Oo1"/>
                                             <constraint firstAttribute="height" constant="60" id="PEV-Ub-E1a"/>
                                             <constraint firstAttribute="trailing" secondItem="zWh-0M-d7y" secondAttribute="trailing" constant="25" id="Shh-yx-JDb"/>
-                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="A3I-3a-waL" secondAttribute="trailing" constant="20" symbolic="YES" id="m3C-rN-ESd"/>
-                                            <constraint firstItem="A3I-3a-waL" firstAttribute="centerY" secondItem="i1d-6Y-hvp" secondAttribute="centerY" id="rRL-Lz-tIF"/>
+                                            <constraint firstItem="4yl-gv-D37" firstAttribute="top" secondItem="i1d-6Y-hvp" secondAttribute="top" constant="15" id="qE5-up-PEN"/>
                                             <constraint firstItem="zWh-0M-d7y" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="i1d-6Y-hvp" secondAttribute="leading" id="zNz-0v-vTW"/>
                                         </constraints>
                                     </view>
@@ -156,6 +147,7 @@
                         <outlet property="addPhotoView" destination="j18-WE-tM9" id="p8n-Qm-icf"/>
                         <outlet property="groupPhotoViewHeader" destination="i1d-6Y-hvp" id="BAT-XI-NdO"/>
                         <outlet property="groupPhotosView" destination="q6V-26-VwA" id="F21-BF-cYK"/>
+                        <outlet property="groupTitleTextField" destination="4yl-gv-D37" id="EJG-1j-yas"/>
                         <segue destination="Ue4-0A-ca0" kind="presentation" identifier="toGallery" id="bIj-Hj-AXZ"/>
                     </connections>
                 </viewController>
@@ -283,59 +275,8 @@
                                     <inset key="sectionInset" minX="25" minY="0.0" maxX="0.0" maxY="64"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="EmptyGroupCell" id="61J-kC-Ipk" customClass="EmptyGroupCell" customModule="StudioStory" customModuleProvider="target">
-                                        <rect key="frame" x="25" y="21.5" width="325" height="386"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                            <rect key="frame" x="0.0" y="0.0" width="325" height="386"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_AddPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="pmk-gR-ICR">
-                                                    <rect key="frame" x="118" y="126" width="90" height="90"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="90" id="NCU-93-uqw"/>
-                                                        <constraint firstAttribute="width" constant="90" id="UTj-wm-hKP"/>
-                                                    </constraints>
-                                                </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Click to make your first album ! " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bRp-7e-JDI">
-                                                    <rect key="frame" x="42" y="239" width="240" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" red="0.80268329381942749" green="0.80329757928848267" blue="0.80277836322784424" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New Album" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UAr-3n-5CF">
-                                                    <rect key="frame" x="23" y="20" width="129" height="29"/>
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="PinkTitle" translatesAutoresizingMaskIntoConstraints="NO" id="qnl-IR-FNl">
-                                                    <rect key="frame" x="23" y="49" width="25" height="4"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="25" id="Byk-LH-weo"/>
-                                                        <constraint firstAttribute="height" constant="4" id="D2H-z0-A76"/>
-                                                    </constraints>
-                                                </imageView>
-                                            </subviews>
-                                        </view>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstItem="UAr-3n-5CF" firstAttribute="leading" secondItem="61J-kC-Ipk" secondAttribute="leadingMargin" constant="15" id="5JE-6v-3Vl"/>
-                                            <constraint firstItem="pmk-gR-ICR" firstAttribute="top" secondItem="61J-kC-Ipk" secondAttribute="top" constant="126" id="5Rj-ce-HAC"/>
-                                            <constraint firstItem="pmk-gR-ICR" firstAttribute="top" secondItem="UAr-3n-5CF" secondAttribute="bottom" constant="77" id="7iB-Ed-P97"/>
-                                            <constraint firstItem="UAr-3n-5CF" firstAttribute="top" secondItem="61J-kC-Ipk" secondAttribute="topMargin" constant="12" id="9iF-YW-BS6"/>
-                                            <constraint firstItem="UAr-3n-5CF" firstAttribute="leading" secondItem="qnl-IR-FNl" secondAttribute="leading" id="QXa-Ug-FcM"/>
-                                            <constraint firstItem="qnl-IR-FNl" firstAttribute="top" secondItem="UAr-3n-5CF" secondAttribute="bottom" id="h9u-px-SES"/>
-                                            <constraint firstItem="bRp-7e-JDI" firstAttribute="top" secondItem="pmk-gR-ICR" secondAttribute="bottom" constant="23" id="hGE-hX-Ndq"/>
-                                            <constraint firstItem="bRp-7e-JDI" firstAttribute="centerX" secondItem="61J-kC-Ipk" secondAttribute="centerX" id="jNq-69-npu"/>
-                                            <constraint firstItem="pmk-gR-ICR" firstAttribute="centerX" secondItem="61J-kC-Ipk" secondAttribute="centerX" id="yi2-TA-n86"/>
-                                        </constraints>
-                                        <connections>
-                                            <outlet property="groupTitleLabel" destination="UAr-3n-5CF" id="aZC-A5-i37"/>
-                                        </connections>
-                                    </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="GroupPreviewCell" id="paM-TQ-vW7" customClass="GroupPreviewCell" customModule="StudioStory" customModuleProvider="target">
-                                        <rect key="frame" x="365" y="21.5" width="325" height="386"/>
+                                        <rect key="frame" x="25" y="21.5" width="325" height="386"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                             <rect key="frame" x="0.0" y="0.0" width="325" height="386"/>
@@ -475,6 +416,58 @@
                                             <segue destination="BYZ-38-t0r" kind="show" id="wvr-JM-8w4"/>
                                         </connections>
                                     </collectionViewCell>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="EmptyGroupCell" id="61J-kC-Ipk" customClass="EmptyGroupCell" customModule="StudioStory" customModuleProvider="target">
+                                        <rect key="frame" x="365" y="21.5" width="325" height="386"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="325" height="386"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_AddPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="pmk-gR-ICR">
+                                                    <rect key="frame" x="118" y="126" width="90" height="90"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="90" id="NCU-93-uqw"/>
+                                                        <constraint firstAttribute="width" constant="90" id="UTj-wm-hKP"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Click to make your first album ! " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bRp-7e-JDI">
+                                                    <rect key="frame" x="42" y="239" width="240" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.80268329381942749" green="0.80329757928848267" blue="0.80277836322784424" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New Album" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UAr-3n-5CF">
+                                                    <rect key="frame" x="23" y="20" width="129" height="29"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="PinkTitle" translatesAutoresizingMaskIntoConstraints="NO" id="qnl-IR-FNl">
+                                                    <rect key="frame" x="23" y="49" width="25" height="4"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="25" id="Byk-LH-weo"/>
+                                                        <constraint firstAttribute="height" constant="4" id="D2H-z0-A76"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                        </view>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="UAr-3n-5CF" firstAttribute="leading" secondItem="61J-kC-Ipk" secondAttribute="leadingMargin" constant="15" id="5JE-6v-3Vl"/>
+                                            <constraint firstItem="pmk-gR-ICR" firstAttribute="top" secondItem="61J-kC-Ipk" secondAttribute="top" constant="126" id="5Rj-ce-HAC"/>
+                                            <constraint firstItem="pmk-gR-ICR" firstAttribute="top" secondItem="UAr-3n-5CF" secondAttribute="bottom" constant="77" id="7iB-Ed-P97"/>
+                                            <constraint firstItem="UAr-3n-5CF" firstAttribute="top" secondItem="61J-kC-Ipk" secondAttribute="topMargin" constant="12" id="9iF-YW-BS6"/>
+                                            <constraint firstItem="UAr-3n-5CF" firstAttribute="leading" secondItem="qnl-IR-FNl" secondAttribute="leading" id="QXa-Ug-FcM"/>
+                                            <constraint firstItem="qnl-IR-FNl" firstAttribute="top" secondItem="UAr-3n-5CF" secondAttribute="bottom" id="h9u-px-SES"/>
+                                            <constraint firstItem="bRp-7e-JDI" firstAttribute="top" secondItem="pmk-gR-ICR" secondAttribute="bottom" constant="23" id="hGE-hX-Ndq"/>
+                                            <constraint firstItem="bRp-7e-JDI" firstAttribute="centerX" secondItem="61J-kC-Ipk" secondAttribute="centerX" id="jNq-69-npu"/>
+                                            <constraint firstItem="pmk-gR-ICR" firstAttribute="centerX" secondItem="61J-kC-Ipk" secondAttribute="centerX" id="yi2-TA-n86"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="groupTitleLabel" destination="UAr-3n-5CF" id="aZC-A5-i37"/>
+                                            <segue destination="BYZ-38-t0r" kind="show" id="pYf-FZ-AVn"/>
+                                        </connections>
+                                    </collectionViewCell>
                                 </cells>
                                 <connections>
                                     <outlet property="dataSource" destination="gwK-il-o6y" id="V8l-Rg-pfx"/>
@@ -609,4 +602,7 @@
         <image name="ic_AddPhoto" width="90" height="90"/>
         <image name="newidea" width="36" height="39"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="wvr-JM-8w4"/>
+    </inferredMetricsTieBreakers>
 </document>
