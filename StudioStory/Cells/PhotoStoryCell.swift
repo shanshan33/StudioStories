@@ -28,8 +28,8 @@ class PhotoStoryCell: UICollectionViewCell {
         self.layer.shadowColor = UIColor(red:0, green:0, blue:0, alpha:0.08).cgColor
         self.layer.shadowOpacity = 1
         self.layer.shadowRadius = 10
-        self.layer.masksToBounds = false
-        self.layer.shadowPath = UIBezierPath(roundedRect:self.bounds, cornerRadius:self.contentView.layer.cornerRadius).cgPath
+ //       self.layer.masksToBounds = false
+ //       self.layer.shadowPath = UIBezierPath(roundedRect:self.bounds, cornerRadius:self.contentView.layer.cornerRadius).cgPath
         
     }
 }

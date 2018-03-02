@@ -69,7 +69,7 @@
                                             <constraint firstItem="4yl-gv-D37" firstAttribute="top" secondItem="i1d-6Y-hvp" secondAttribute="top" constant="15" id="qE5-up-PEN"/>
                                         </constraints>
                                     </view>
-                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="QAS-cP-A2d">
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="QAS-cP-A2d">
                                         <rect key="frame" x="13" y="67.5" width="350" height="507.5"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <collectionViewLayout key="collectionViewLayout" id="pnv-CQ-GrX" customClass="PhotoStoryLayout" customModule="StudioStory" customModuleProvider="target"/>
