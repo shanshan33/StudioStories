@@ -18,7 +18,7 @@ class PhotoStoryLayout: UICollectionViewLayout {
     
     weak var delegate: PhotoStoryLayoutDelegate!
     fileprivate var numberOfColumns = 2
-    fileprivate var cellPadding: CGFloat = 25
+    fileprivate var cellPadding: CGFloat = 12.5
     
     fileprivate var cache = [UICollectionViewLayoutAttributes]()
     fileprivate var contentHeight: CGFloat = 0
@@ -55,7 +55,7 @@ class PhotoStoryLayout: UICollectionViewLayout {
             let indexPath = IndexPath(item: item, section: 0)
             
             // 4. Asks the delegate for the height of the picture and the annotation and calculates the cell frame.            
-            let cellWidth = (UIScreen.main.bounds.width - 25 * 3) / 2
+            let cellWidth = (UIScreen.main.bounds.width - cellPadding * 4) / 2
 
             let photoOriginHeight = delegate.collectionView(collectionView, heightForPhotoAtIndexPath: indexPath)
             let photoOriginWidth = delegate.collectionView(collectionView, widthForPhotoAtIndexPath: indexPath)
@@ -64,7 +64,7 @@ class PhotoStoryLayout: UICollectionViewLayout {
             let height = cellHeight + cellPadding
             
             let frame = CGRect(x: xOffset[column], y: yOffset[column], width: columnWidth, height: height)
-            let insetFrame = frame.insetBy(dx: cellPadding, dy: cellPadding)
+            let insetFrame = frame.insetBy(dx: cellPadding, dy: cellPadding )
             
             // 5. Creates an UICollectionViewLayoutItem with the frame and add it to the cache
             let attributes = UICollectionViewLayoutAttributes(forCellWith: indexPath)

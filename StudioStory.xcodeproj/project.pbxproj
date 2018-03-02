@@ -14,7 +14,7 @@
 		F3481E66203B04FA00B68183 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3481E64203B04FA00B68183 /* LaunchScreen.storyboard */; };
 		F3481E71203B04FA00B68183 /* StudioStoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3481E70203B04FA00B68183 /* StudioStoryTests.swift */; };
 		F3481E7C203B04FA00B68183 /* StudioStoryUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3481E7B203B04FA00B68183 /* StudioStoryUITests.swift */; };
-		F3481E8A203B0A2F00B68183 /* GroupCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3481E89203B0A2F00B68183 /* GroupCell.swift */; };
+		F3481E8A203B0A2F00B68183 /* PhotoStoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3481E89203B0A2F00B68183 /* PhotoStoryCell.swift */; };
 		F3481E8C203B0DD400B68183 /* PhotosPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3481E8B203B0DD400B68183 /* PhotosPicker.swift */; };
 		F3481E8E203C56BB00B68183 /* PhotoPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3481E8D203C56BA00B68183 /* PhotoPageViewController.swift */; };
 		F3481E90203C5C1900B68183 /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3481E8F203C5C1900B68183 /* PhotoViewController.swift */; };
@@ -59,7 +59,7 @@
 		F3481E77203B04FA00B68183 /* StudioStoryUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StudioStoryUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3481E7B203B04FA00B68183 /* StudioStoryUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudioStoryUITests.swift; sourceTree = "<group>"; };
 		F3481E7D203B04FA00B68183 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F3481E89203B0A2F00B68183 /* GroupCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupCell.swift; sourceTree = "<group>"; };
+		F3481E89203B0A2F00B68183 /* PhotoStoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoStoryCell.swift; sourceTree = "<group>"; };
 		F3481E8B203B0DD400B68183 /* PhotosPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosPicker.swift; sourceTree = "<group>"; };
 		F3481E8D203C56BA00B68183 /* PhotoPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPageViewController.swift; sourceTree = "<group>"; };
 		F3481E8F203C5C1900B68183 /* PhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
@@ -123,6 +123,7 @@
 			children = (
 				F3481E58203B04FA00B68183 /* AppDelegate.swift */,
 				F3481E5C203B04FA00B68183 /* Main.storyboard */,
+				F3481E8B203B0DD400B68183 /* PhotosPicker.swift */,
 				F38CCE692047044500200F33 /* Models */,
 				F3E2250C20406AA8007DB05C /* Cells */,
 				F3E2250B20406A91007DB05C /* ViewController */,
@@ -130,9 +131,6 @@
 				F3481E64203B04FA00B68183 /* LaunchScreen.storyboard */,
 				F3481E67203B04FA00B68183 /* Info.plist */,
 				F3481E5F203B04FA00B68183 /* StudioStory.xcdatamodeld */,
-				F3481E8B203B0DD400B68183 /* PhotosPicker.swift */,
-				F3481E8D203C56BA00B68183 /* PhotoPageViewController.swift */,
-				F38CCE6C20480EDB00200F33 /* GroupPreviewFlowLayout.swift */,
 			);
 			path = StudioStory;
 			sourceTree = "<group>";
@@ -171,6 +169,8 @@
 				F3AE53BE203F18DD007FE50D /* GroupsPreviewViewController.swift */,
 				F3481E8F203C5C1900B68183 /* PhotoViewController.swift */,
 				F3481E91203C5C5600B68183 /* PhotoGalleryViewController.swift */,
+				F38CCE6C20480EDB00200F33 /* GroupPreviewFlowLayout.swift */,
+				F3481E8D203C56BA00B68183 /* PhotoPageViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -178,7 +178,7 @@
 		F3E2250C20406AA8007DB05C /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				F3481E89203B0A2F00B68183 /* GroupCell.swift */,
+				F3481E89203B0A2F00B68183 /* PhotoStoryCell.swift */,
 				F3AE53C0203F1DAA007FE50D /* GroupPreviewCell.swift */,
 				F38CCE652046FE9800200F33 /* EmptyGroupCell.swift */,
 			);
@@ -328,7 +328,7 @@
 				F38CCE6B2047046200200F33 /* PhotoStory.swift in Sources */,
 				F3AE53C1203F1DAA007FE50D /* GroupPreviewCell.swift in Sources */,
 				F3481E8E203C56BB00B68183 /* PhotoPageViewController.swift in Sources */,
-				F3481E8A203B0A2F00B68183 /* GroupCell.swift in Sources */,
+				F3481E8A203B0A2F00B68183 /* PhotoStoryCell.swift in Sources */,
 				F3481E92203C5C5600B68183 /* PhotoGalleryViewController.swift in Sources */,
 				F3481E90203C5C1900B68183 /* PhotoViewController.swift in Sources */,
 				F38CCE6D20480EDB00200F33 /* GroupPreviewFlowLayout.swift in Sources */,

@@ -156,11 +156,11 @@ extension PhotoViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell  = collectionView.dequeueReusableCell(withReuseIdentifier: "GroupCell", for: indexPath) as! GroupCell
+        let cell  = collectionView.dequeueReusableCell(withReuseIdentifier: "PhotoStoryCell", for: indexPath) as! PhotoStoryCell
         if pictures.count > 0 {
-            cell.groupCoverImageView.image = pictures[indexPath.row]
+            cell.photoImageView.image = pictures[indexPath.row]
         }
-        cell.layer.cornerRadius = 10
+  //      cell.layer.cornerRadius = 4
         return cell
     }
 }
