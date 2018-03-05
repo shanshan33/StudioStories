@@ -12,6 +12,7 @@ import UIKit
 class PhotoViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIGestureRecognizerDelegate {
 
     var photosPicker = PhotosPicker()
+    var photoStories: [PhotoStory] = []
     var pictures: [UIImage] = []
     @IBOutlet weak var addPhotoView: UIView!
     @IBOutlet weak var PhotosCollectionView: UICollectionView!
@@ -57,8 +58,9 @@ class PhotoViewController: UIViewController, UIImagePickerControllerDelegate, UI
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        photosPicker.imagePickedBlock = { (image) in
-            self.pictures.append(image)
+        photosPicker.imagePickedBlock = { (image,date) in
+            let story = PhotoStory(image: image, groupName:self.groupTitleTextField.text, createDate: date)
+            self.photoStories.append(story)
             self.PhotosCollectionView.reloadData()
             self.viewWillLayoutSubviews()
         }
@@ -78,7 +80,7 @@ class PhotoViewController: UIViewController, UIImagePickerControllerDelegate, UI
         let point = gestureReconizer.location(in: self.PhotosCollectionView)
         let indexPath = self.PhotosCollectionView.indexPathForItem(at: point)
         if let index = indexPath {
-            pictures.remove(at: index.row)
+            photoStories.remove(at: index.row)
             PhotosCollectionView.deleteItems(at: [index])
             PhotosCollectionView.reloadData()
         } else {
@@ -89,7 +91,7 @@ class PhotoViewController: UIViewController, UIImagePickerControllerDelegate, UI
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let indexPath = sender as? IndexPath else { return }
         guard let photoGalleryViewController  = segue.destination as? PhotoGalleryViewController else { return }
-        photoGalleryViewController.pickedImage = pictures[indexPath.row]
+        photoGalleryViewController.story = photoStories[indexPath.row]
     }
     
     override func viewWillLayoutSubviews() {
@@ -118,6 +120,7 @@ extension PhotoViewController: UITextFieldDelegate {
         return true
     }
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        
         textField.resignFirstResponder();
         return true
     }
@@ -135,8 +138,7 @@ extension PhotoViewController: UIViewControllerPreviewingDelegate {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         guard let photoGallery = storyboard.instantiateViewController(withIdentifier: "PhotoGalleryViewController") as? PhotoGalleryViewController else { return nil }
         
-        let photo = pictures[indexPath.row]
-        photoGallery.pickedImage = photo
+        photoGallery.story = photoStories[indexPath.row]
         photoGallery.preferredContentSize = CGSize(width: 0.0, height: 500)
         previewingContext.sourceRect = cellAttributes.frame
         return photoGallery
@@ -152,15 +154,14 @@ extension PhotoViewController: UIViewControllerPreviewingDelegate {
 extension PhotoViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return pictures.count > 0 ? pictures.count : 0
+        return photoStories.count > 0 ? photoStories.count : 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell  = collectionView.dequeueReusableCell(withReuseIdentifier: "PhotoStoryCell", for: indexPath) as! PhotoStoryCell
-        if pictures.count > 0 {
-            cell.photoImageView.image = pictures[indexPath.row]
+        if photoStories.count > 0 {
+            cell.photoImageView.image = photoStories[indexPath.row].image
         }
-  //      cell.layer.cornerRadius = 4
         return cell
     }
 }
@@ -176,11 +177,13 @@ extension PhotoViewController: UICollectionViewDelegate {
 //MARK: - PINTEREST LAYOUT DELEGATE
 extension PhotoViewController: PhotoStoryLayoutDelegate {
     func collectionView(_ collectionView: UICollectionView, heightForPhotoAtIndexPath indexPath:IndexPath) -> CGFloat {
-        return pictures[indexPath.item].size.height
+        guard let image = photoStories[indexPath.item].image else { return 0 }
+        return image.size.height
     }
     
     func collectionView(_ collectionView: UICollectionView, widthForPhotoAtIndexPath indexPath: IndexPath) -> CGFloat {
-        return pictures[indexPath.item].size.width
+        guard let image = photoStories[indexPath.item].image else { return 0 }
+        return image.size.width
     }
     
 }

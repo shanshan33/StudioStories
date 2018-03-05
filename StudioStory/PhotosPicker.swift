@@ -19,7 +19,7 @@ class PhotosPicker: NSObject, UIImagePickerControllerDelegate, UINavigationContr
     var viewController: UIViewController?
     
     //MARK: Internal Properties
-    var imagePickedBlock: ((UIImage) -> Void)?
+    var imagePickedBlock: ((UIImage, Date) -> Void)?
     
     func openCamera() {
         
@@ -68,9 +68,10 @@ class PhotosPicker: NSObject, UIImagePickerControllerDelegate, UINavigationContr
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        let currentDateTime = Date()
         if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
-            self.imagePickedBlock?(image)
-        }else{
+            self.imagePickedBlock?(image,currentDateTime)
+        } else {
             print("Something went wrong")
         }
         viewController?.dismiss(animated: true, completion: nil)

@@ -12,12 +12,12 @@ public struct PhotoStory {
     var image: UIImage?
     var description: String?
     var creator: String?
-    var createDate: NSDate?
-    var group: Group?
+    var createDate: Date?
+    var groupName: String?
     
-    init(image: UIImage?, group: Group? = nil, description:String? = nil, creator: String? = nil, createDate: NSDate? = nil) {
+    init(image: UIImage?, groupName: String? = nil, description:String? = nil, creator: String? = nil, createDate: Date? = nil) {
         self.image = image
-        self.group = group
+        self.groupName = groupName
         self.description = description
         self.creator = creator
         self.createDate = createDate
