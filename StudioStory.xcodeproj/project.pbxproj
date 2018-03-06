@@ -27,6 +27,7 @@
 		F3AE53BF203F18DD007FE50D /* GroupsPreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3AE53BE203F18DD007FE50D /* GroupsPreviewViewController.swift */; };
 		F3AE53C1203F1DAA007FE50D /* GroupPreviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3AE53C0203F1DAA007FE50D /* GroupPreviewCell.swift */; };
 		F3D349342049A53D0022DE9B /* UIImageColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D349332049A53D0022DE9B /* UIImageColors.swift */; };
+		F3D34936204E9BA40022DE9B /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D34935204E9BA40022DE9B /* Common.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +74,7 @@
 		F3AE53BE203F18DD007FE50D /* GroupsPreviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsPreviewViewController.swift; sourceTree = "<group>"; };
 		F3AE53C0203F1DAA007FE50D /* GroupPreviewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupPreviewCell.swift; sourceTree = "<group>"; };
 		F3D349332049A53D0022DE9B /* UIImageColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageColors.swift; sourceTree = "<group>"; };
+		F3D34935204E9BA40022DE9B /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +128,7 @@
 				F3481E58203B04FA00B68183 /* AppDelegate.swift */,
 				F3481E5C203B04FA00B68183 /* Main.storyboard */,
 				F3481E8B203B0DD400B68183 /* PhotosPicker.swift */,
+				F3D349332049A53D0022DE9B /* UIImageColors.swift */,
 				F38CCE692047044500200F33 /* Models */,
 				F3E2250C20406AA8007DB05C /* Cells */,
 				F3E2250B20406A91007DB05C /* ViewController */,
@@ -133,7 +136,7 @@
 				F3481E64203B04FA00B68183 /* LaunchScreen.storyboard */,
 				F3481E67203B04FA00B68183 /* Info.plist */,
 				F3481E5F203B04FA00B68183 /* StudioStory.xcdatamodeld */,
-				F3D349332049A53D0022DE9B /* UIImageColors.swift */,
+				F3D34935204E9BA40022DE9B /* Common.swift */,
 			);
 			path = StudioStory;
 			sourceTree = "<group>";
@@ -322,6 +325,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F3D34936204E9BA40022DE9B /* Common.swift in Sources */,
 				F3AE53BF203F18DD007FE50D /* GroupsPreviewViewController.swift in Sources */,
 				F3481E59203B04FA00B68183 /* AppDelegate.swift in Sources */,
 				F3481E8C203B0DD400B68183 /* PhotosPicker.swift in Sources */,

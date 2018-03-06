@@ -21,25 +21,28 @@ class PhotoGalleryViewController: UIViewController, UIGestureRecognizerDelegate 
     @IBOutlet weak var photoCreateDateLabel: UILabel!
 
     @IBOutlet var photoImageViewHeightConstraint: NSLayoutConstraint!
-    
     @IBOutlet var photoImageViewWidthConstraint: NSLayoutConstraint!
     
+    @IBOutlet weak var colorView: UIView!
+    @IBOutlet weak var colorsStackView: UIStackView!
+    @IBOutlet weak var RGBstackView: UIStackView!
+    
+    @IBOutlet weak var Footer: UIView!
+
     var frameOrigin: CGRect?
     var story: PhotoStory?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupPhotoGallery(story!)
-        photoImageView.layer.cornerRadius = 16
+ //       photoImageView.layer.cornerRadius = 16
    //     photoImageView.clipsToBounds = true
         
-        let tapToFullScreen = UITapGestureRecognizer(target: self, action: #selector(tapPhotoToFullScreen))
-        tapToFullScreen.delegate = self
-        photoInfoScrollView.addGestureRecognizer(tapToFullScreen)
-        frameOrigin = photoImageView.frame
-        
+ //       let tapToFullScreen = UITapGestureRecognizer(target: self, action: #selector(tapPhotoToFullScreen))
+ //       tapToFullScreen.delegate = self
+ //       photoInfoScrollView.addGestureRecognizer(tapToFullScreen)
+ //       frameOrigin = photoImageView.frame
         photoInfoScrollView.delegate = self
-
     }
     
     override func viewDidLayoutSubviews() {
@@ -50,10 +53,30 @@ class PhotoGalleryViewController: UIViewController, UIGestureRecognizerDelegate 
     }
     
     func setupPhotoGallery(_ photoStory: PhotoStory) {
-        self.photoImageView.image = self.makeRoundedImage(image:photoStory.image!, radius: 16)
+        guard let photo = photoStory.image else { return }
+        self.photoImageView.image = photo.radiusImage(16, size: photo.size)
         photoImageView.clipsToBounds = true
         self.groupNameLabel.text = photoStory.groupName
         self.photoCreateDateLabel.text = "Uploaded \(dateToString(dateToString: photoStory.createDate!))"
+        
+        var hexArray: [String] = []
+        photo.getColors { colors in
+            
+            for (index, colorView) in self.colorsStackView.subviews.enumerated() {
+                colorView.backgroundColor = colors[index]
+            }
+            
+            for color in colors {
+                hexArray.append(color.toHex()!)
+            }
+            
+            for (index, label) in self.RGBstackView.subviews.enumerated() {
+                if let label = label as? UILabel{
+                    label.text = "#\(hexArray[index])"
+                }
+            }
+            print("colors: \(colors)")
+        }
     }
     
     private func dateToString(dateToString: Date) -> String {
@@ -66,43 +89,29 @@ class PhotoGalleryViewController: UIViewController, UIGestureRecognizerDelegate 
     
     @objc func tapPhotoToFullScreen() {
         photoImageView.frame = UIScreen.main.bounds
-        photoImageView.contentMode = .scaleAspectFit
+ //       photoImageView.image = story?.image
+  //      photoImageView.contentMode = .scaleAspectFit
         photoImageView.backgroundColor = .black
         photoImageView.layer.cornerRadius = 0
+        colorView.isHidden = true
         closeButton.isHidden = true
-        infoStackView.isHidden = true
+        Footer.isHidden = true
         let tapToDismiss = UITapGestureRecognizer(target: self, action: #selector(dismissFullscreenImage))
         tapToDismiss.delegate = self
-        photoImageView.addGestureRecognizer(tapToDismiss)
+        photoInfoScrollView.addGestureRecognizer(tapToDismiss)
     }
     
     @objc func dismissFullscreenImage(_ sender: UITapGestureRecognizer) {
         closeButton.isHidden = false
-        infoStackView.isHidden = false
+        Footer.isHidden = false
         photoImageView.frame = frameOrigin!
-        photoImageView.contentMode = .scaleAspectFill
+ //       photoImageView.contentMode = .scaleAspectFit
         photoImageView.backgroundColor = .clear
         photoImageView.layer.cornerRadius = 16
         
         let tapToFullScreen = UITapGestureRecognizer(target: self, action: #selector(tapPhotoToFullScreen))
         tapToFullScreen.delegate = self
-        photoImageView.addGestureRecognizer(tapToFullScreen)
-    }
-    
-    func makeRoundedImage(image: UIImage, radius: Float) -> UIImage {
-        let imageLayer = CALayer()
-        imageLayer.frame = CGRect(x: 0, y: 0, width: image.size.width, height: image.size.height)
-        imageLayer.contents = image.cgImage
-        
-        imageLayer.masksToBounds = true
-        imageLayer.cornerRadius = CGFloat(radius)
-        
-        UIGraphicsBeginImageContext(image.size)
-        imageLayer.render(in: UIGraphicsGetCurrentContext()!)
-        let roundedImage = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()
-        
-        return roundedImage!
+        photoInfoScrollView.addGestureRecognizer(tapToFullScreen)
     }
 
     override func didReceiveMemoryWarning() {
@@ -111,6 +120,8 @@ class PhotoGalleryViewController: UIViewController, UIGestureRecognizerDelegate 
     }
     
     @IBAction func showColorPalette(_ sender: UIButton) {
+        let image = UIImage(named: "yeezus.png")
+
     }
     
     @IBAction func dismiss(_ sender: UIButton) {
@@ -146,35 +157,9 @@ extension PhotoGalleryViewController: UIScrollViewDelegate {
             photoImageView.frame.size.height = -offsetY
         } else {
             print("scroll up, offset \(offsetY)")
-
-   //         photoInfoScrollView.backgroundColor = .blue
             photoImageView.frame.size.height = photoImageView.frame.height
         }
-        
-        
-//        if offsetY < 0
-//        {
-//            print("scroll down")
-//            UIView.animate(withDuration: 1, animations: {
-//                DispatchQueue.main.async {
-//                    self.photoImageViewHeightConstraint.isActive = true
-//                    self.photoImageViewWidthConstraint.isActive = true
-//                    self.photoInfoScrollView.layoutIfNeeded()
-//                }
-//            })
-//        }
-//        else
-//        {
-//            print("scroll up")
-//            UIView.animate(withDuration: 1, animations: {
-//                DispatchQueue.main.async {
-//                    self.photoImageViewHeightConstraint.constant = 300
-//                    self.photoImageViewWidthConstraint.constant = 250
-//                    self.photoInfoScrollView.layoutIfNeeded()
-//                }
-//
-//            })
-//        }
+
     }
 }
 
