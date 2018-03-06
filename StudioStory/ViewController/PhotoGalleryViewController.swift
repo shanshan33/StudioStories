@@ -54,7 +54,7 @@ class PhotoGalleryViewController: UIViewController, UIGestureRecognizerDelegate 
     
     func setupPhotoGallery(_ photoStory: PhotoStory) {
         guard let photo = photoStory.image else { return }
-        self.photoImageView.image = photo.radiusImage(16, size: photo.size)
+        self.photoImageView.image = photo.radiusImage(32, size: photo.size)
         photoImageView.clipsToBounds = true
         self.groupNameLabel.text = photoStory.groupName
         self.photoCreateDateLabel.text = "Uploaded \(dateToString(dateToString: photoStory.createDate!))"
@@ -120,8 +120,11 @@ class PhotoGalleryViewController: UIViewController, UIGestureRecognizerDelegate 
     }
     
     @IBAction func showColorPalette(_ sender: UIButton) {
-        let image = UIImage(named: "yeezus.png")
+        UIView.animate(withDuration: 0.2) {
+            self.photoInfoScrollView.contentOffset = CGPoint(x: 0, y: -302)
+            self.photoImageView.frame.size.height = 302
 
+        }
     }
     
     @IBAction func dismiss(_ sender: UIButton) {

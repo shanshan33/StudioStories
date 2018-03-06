@@ -303,7 +303,7 @@ extension UIImage {
             }
         }
         
-        return [proposed[1].uicolor, proposed[2].uicolor, proposed[3].uicolor]
+        return [proposed[0].uicolor, proposed[1].uicolor, proposed[2].uicolor, proposed[3].uicolor]
         
 //        return UIImageColors(
 //            background: proposed[0].uicolor,

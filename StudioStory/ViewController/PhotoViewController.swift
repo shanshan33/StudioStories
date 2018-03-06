@@ -139,14 +139,13 @@ extension PhotoViewController: UIViewControllerPreviewingDelegate {
         guard let photoGallery = storyboard.instantiateViewController(withIdentifier: "PhotoGalleryViewController") as? PhotoGalleryViewController else { return nil }
         
         photoGallery.story = photoStories[indexPath.row]
-        photoGallery.preferredContentSize = CGSize(width: 0.0, height: 500)
+        photoGallery.preferredContentSize = CGSize(width: 0.0, height: 452)
         previewingContext.sourceRect = cellAttributes.frame
         return photoGallery
         
     }
     
     func previewingContext(_ previewingContext: UIViewControllerPreviewing, commit viewControllerToCommit: UIViewController) {
-  //      show(viewControllerToCommit, sender: self)
         present(viewControllerToCommit, animated: true, completion: nil)
     }
 }
