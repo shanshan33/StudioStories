@@ -64,7 +64,23 @@ class PhotoGalleryViewController: UIViewController, UIGestureRecognizerDelegate 
         self.photoImageView.image = photo.radiusImage(32, size: photo.size)
         photoImageView.clipsToBounds = true
         self.groupNameLabel.text = photoViewModel.groupName
-        self.photoCreateDateLabel.text =  photoViewModel.createDate  //  "Uploaded \(dateToString(dateToString: photoStory.createDate!))"
+        self.photoCreateDateLabel.text =  photoViewModel.createDate
+        
+        var hexArray: [String] = []
+        photo.getColors { colors in
+            for (index, colorView) in self.colorsStackView.subviews.enumerated() {
+                colorView.backgroundColor = colors[index]
+            }
+            for color in colors {
+                hexArray.append(color.toHex()!)
+            }
+            for (index, label) in self.RGBstackView.subviews.enumerated() {
+                if let label = label as? UILabel{
+                    label.text = "#\(hexArray[index])"
+                }
+            }
+            print("colors: \(colors)")
+        }
 
     }
     
@@ -151,7 +167,7 @@ class PhotoGalleryViewController: UIViewController, UIGestureRecognizerDelegate 
         
         let item1 = UIPreviewAction(title: "Save To Library", style: .default) {
             (action, vc) in
-            guard let image = self.story?.image else { return }
+            guard let image = self.photoViewModel.image else { return }
             UIImageWriteToSavedPhotosAlbum(image, self, #selector(self.image(_:didFinishSavingWithError:contextInfo:)), nil)
         }
         
