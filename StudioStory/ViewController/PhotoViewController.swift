@@ -15,6 +15,7 @@ class PhotoViewController: UIViewController, UIImagePickerControllerDelegate, UI
     var photoStories: [PhotoStory] = []
     var pictures: [UIImage] = []
 
+    @IBOutlet weak var numberOfPhotoLabel: UILabel!
     
     var photoViewModels: [PhotoViewModel] = []
         
@@ -67,18 +68,14 @@ class PhotoViewController: UIViewController, UIImagePickerControllerDelegate, UI
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-//        photosPicker.imagePickedBlock = { (image,date) in
-//            let story = PhotoStory(image: image, groupName:self.groupTitleTextField.text, createDate: date)
-//            self.photoStories.append(story)
-//            self.PhotosCollectionView.reloadData()
-//            self.viewWillLayoutSubviews()
-//        }
+
         let title =  self.groupTitleTextField.text ?? "New Album"
         photoViewModel.fetchPickedPhoto(groupName: title) { (photo) in
             self.photoViewModels.append(photo!)
             self.PhotosCollectionView.reloadData()
             self.viewWillLayoutSubviews()
         }
+        numberOfPhotoLabel.text = self.photoViewModels.count > 0 ? "∙ \(self.photoViewModels.count)" : ""
     }
 
     override func viewWillDisappear(_ animated: Bool) {

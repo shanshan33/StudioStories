@@ -31,19 +31,19 @@
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="123" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zWh-0M-d7y">
-                                                <rect key="frame" x="327" y="18" width="23" height="24"/>
+                                                <rect key="frame" x="300" y="18" width="50" height="24"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="24" id="g0h-yH-BvN"/>
+                                                    <constraint firstAttribute="width" constant="50" id="iBU-7W-oVv"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                <nil key="textColor"/>
+                                                <color key="textColor" red="0.86230796575546265" green="0.16166627407073975" blue="0.27245286107063293" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="New Album" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4yl-gv-D37">
                                                 <rect key="frame" x="25" y="15" width="287" height="28"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="287" id="OeL-KW-a4X"/>
-                                                    <constraint firstAttribute="height" constant="28" id="j7Y-WQ-dgj"/>
+                                                    <constraint firstAttribute="height" constant="28" id="7Cq-zK-pyX"/>
                                                 </constraints>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
@@ -59,18 +59,18 @@
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstItem="zWh-0M-d7y" firstAttribute="leading" secondItem="4yl-gv-D37" secondAttribute="trailing" constant="15" id="0iI-53-EWE"/>
                                             <constraint firstItem="zWh-0M-d7y" firstAttribute="centerY" secondItem="i1d-6Y-hvp" secondAttribute="centerY" id="BGv-VH-WBV"/>
-                                            <constraint firstItem="bFm-po-0o9" firstAttribute="leading" secondItem="4yl-gv-D37" secondAttribute="leading" id="Ijl-aU-OWq"/>
-                                            <constraint firstItem="4yl-gv-D37" firstAttribute="leading" secondItem="i1d-6Y-hvp" secondAttribute="leading" constant="25" id="MCv-ei-Oo1"/>
                                             <constraint firstAttribute="height" constant="60" id="PEV-Ub-E1a"/>
+                                            <constraint firstAttribute="trailing" secondItem="4yl-gv-D37" secondAttribute="trailing" constant="63" id="PmA-yj-t7z"/>
+                                            <constraint firstItem="4yl-gv-D37" firstAttribute="leading" secondItem="bFm-po-0o9" secondAttribute="leading" id="QaN-EL-qYZ"/>
                                             <constraint firstAttribute="trailing" secondItem="zWh-0M-d7y" secondAttribute="trailing" constant="25" id="Shh-yx-JDb"/>
-                                            <constraint firstItem="bFm-po-0o9" firstAttribute="top" secondItem="4yl-gv-D37" secondAttribute="bottom" constant="8" id="oNW-Da-OQG"/>
-                                            <constraint firstItem="4yl-gv-D37" firstAttribute="top" secondItem="i1d-6Y-hvp" secondAttribute="top" constant="15" id="qE5-up-PEN"/>
+                                            <constraint firstItem="bFm-po-0o9" firstAttribute="top" secondItem="4yl-gv-D37" secondAttribute="bottom" constant="8" symbolic="YES" id="dTs-IL-Njs"/>
+                                            <constraint firstItem="4yl-gv-D37" firstAttribute="leading" secondItem="i1d-6Y-hvp" secondAttribute="leading" constant="25" id="eFo-FT-I6N"/>
+                                            <constraint firstItem="4yl-gv-D37" firstAttribute="top" secondItem="i1d-6Y-hvp" secondAttribute="top" constant="15" id="eOe-VE-v9j"/>
                                         </constraints>
                                     </view>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="QAS-cP-A2d">
-                                        <rect key="frame" x="13" y="67.5" width="350" height="507.5"/>
+                                        <rect key="frame" x="13" y="68" width="350" height="507"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <collectionViewLayout key="collectionViewLayout" id="pnv-CQ-GrX" customClass="PhotoStoryLayout" customModule="StudioStory" customModuleProvider="target"/>
                                         <cells>
@@ -156,6 +156,7 @@
                         <outlet property="groupPhotoViewHeader" destination="i1d-6Y-hvp" id="BAT-XI-NdO"/>
                         <outlet property="groupPhotosView" destination="q6V-26-VwA" id="F21-BF-cYK"/>
                         <outlet property="groupTitleTextField" destination="4yl-gv-D37" id="EJG-1j-yas"/>
+                        <outlet property="numberOfPhotoLabel" destination="zWh-0M-d7y" id="hHM-eC-xxc"/>
                         <segue destination="Ue4-0A-ca0" kind="presentation" identifier="toGallery" id="bIj-Hj-AXZ"/>
                     </connections>
                 </viewController>
