@@ -43,13 +43,15 @@ class PhotoGalleryViewController: UIViewController, UIGestureRecognizerDelegate 
  //       photoInfoScrollView.addGestureRecognizer(tapToFullScreen)
  //       frameOrigin = photoImageView.frame
         photoInfoScrollView.delegate = self
+
     }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
-        photoInfoScrollView.contentOffset = CGPoint(x: 0, y: -425)
-        photoInfoScrollView.contentInset = UIEdgeInsets(top: 425, left: 0, bottom: 0, right: 0)
+        photoInfoScrollView.contentOffset = CGPoint(x: 0, y: -452)
+        photoInfoScrollView.contentInset = UIEdgeInsets(top: 452, left: 0, bottom: 0, right: 0)
+
     }
     
     func setupPhotoGallery(_ photoStory: PhotoStory) {
@@ -121,8 +123,8 @@ class PhotoGalleryViewController: UIViewController, UIGestureRecognizerDelegate 
     
     @IBAction func showColorPalette(_ sender: UIButton) {
         UIView.animate(withDuration: 0.2) {
-            self.photoInfoScrollView.contentOffset = CGPoint(x: 0, y: -302)
-            self.photoImageView.frame.size.height = 302
+            self.photoInfoScrollView.contentOffset = CGPoint(x: 0, y: -352)
+            self.photoImageView.frame.size.height = 352
 
         }
     }
@@ -154,7 +156,7 @@ extension PhotoGalleryViewController: UIScrollViewDelegate {
         photoInfoScrollView.contentSize = CGSize(width: photoInfoScrollView.frame.size.width, height: 100)
         let offsetY = scrollView.contentOffset.y
         
-        if offsetY < 0 && offsetY < -303 {
+        if offsetY < 0 && offsetY < -352 {
             print("scroll down, offset \(offsetY)")
 
             photoImageView.frame.size.height = -offsetY
