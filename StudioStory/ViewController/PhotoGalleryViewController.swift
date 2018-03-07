@@ -32,9 +32,11 @@ class PhotoGalleryViewController: UIViewController, UIGestureRecognizerDelegate 
     var frameOrigin: CGRect?
     var story: PhotoStory?
     
+    var photoViewModel = PhotoViewModel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupPhotoGallery(story!)
+ //       setupPhotoGallery(story!)
  //       photoImageView.layer.cornerRadius = 16
    //     photoImageView.clipsToBounds = true
         
@@ -42,6 +44,8 @@ class PhotoGalleryViewController: UIViewController, UIGestureRecognizerDelegate 
  //       tapToFullScreen.delegate = self
  //       photoInfoScrollView.addGestureRecognizer(tapToFullScreen)
  //       frameOrigin = photoImageView.frame
+        
+        setupPhotoGallery(photoViewModel: photoViewModel)
         photoInfoScrollView.delegate = self
 
     }
@@ -51,6 +55,16 @@ class PhotoGalleryViewController: UIViewController, UIGestureRecognizerDelegate 
         
         photoInfoScrollView.contentOffset = CGPoint(x: 0, y: -452)
         photoInfoScrollView.contentInset = UIEdgeInsets(top: 452, left: 0, bottom: 0, right: 0)
+
+    }
+    
+    
+    func setupPhotoGallery(photoViewModel: PhotoViewModel) {
+        guard let photo = photoViewModel.image else { return }
+        self.photoImageView.image = photo.radiusImage(32, size: photo.size)
+        photoImageView.clipsToBounds = true
+        self.groupNameLabel.text = photoViewModel.groupName
+        self.photoCreateDateLabel.text =  photoViewModel.createDate  //  "Uploaded \(dateToString(dateToString: photoStory.createDate!))"
 
     }
     

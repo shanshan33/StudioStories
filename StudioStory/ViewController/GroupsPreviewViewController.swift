@@ -27,6 +27,13 @@ class GroupsPreviewViewController: UIViewController, UIScrollViewDelegate{
         groups = [Group(name: "Studio Work", photos: nil),
                   Group(name: "Studio Loisir", photos: [PhotoStory(image: #imageLiteral(resourceName: "Studio_Skype"))]),
                   Group(name: "Inspiration", photos: nil)]
+        
+//        photosPicker.imagePickedBlock = { (image,date) in
+//            let story = PhotoStory(image: image, groupName:self.groupTitleTextField.text, createDate: date)
+//            self.photoStories.append(story)
+//            self.PhotosCollectionView.reloadData()
+//            self.viewWillLayoutSubviews()
+//        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
