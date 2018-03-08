@@ -557,7 +557,6 @@
                                             <outlet property="groupTitleLabel" destination="LvN-vi-Acz" id="Jjj-nj-aJm"/>
                                             <outlet property="imagePreviewStackView" destination="Tmi-WO-DsR" id="uY0-JZ-74n"/>
                                             <outlet property="numberOfPhotosLabel" destination="2h5-DH-n8M" id="N4x-dC-7gM"/>
-                                            <segue destination="BYZ-38-t0r" kind="show" identifier="goToAlbum" id="wvr-JM-8w4"/>
                                         </connections>
                                     </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="EmptyGroupCell" id="61J-kC-Ipk" customClass="EmptyGroupCell" customModule="StudioStory" customModuleProvider="target">
@@ -609,7 +608,6 @@
                                         </constraints>
                                         <connections>
                                             <outlet property="groupTitleLabel" destination="UAr-3n-5CF" id="aZC-A5-i37"/>
-                                            <segue destination="BYZ-38-t0r" kind="show" identifier="" id="pYf-FZ-AVn"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -709,6 +707,7 @@
                     <navigationItem key="navigationItem" id="gMP-5o-AY7"/>
                     <connections>
                         <outlet property="groupCollectionView" destination="K8E-5e-syA" id="vid-qo-qJB"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="goToAlbum" id="pvR-e3-LAj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Mv-PE-ORr" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -747,7 +746,4 @@
         <image name="ic_Group" width="24" height="20"/>
         <image name="newidea" width="36" height="39"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="pYf-FZ-AVn"/>
-    </inferredMetricsTieBreakers>
 </document>

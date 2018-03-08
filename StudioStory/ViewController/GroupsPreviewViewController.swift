@@ -1,4 +1,4 @@
-//
+    //
 //  GroupsPreviewViewController.swift
 //  StudioStory
 //
@@ -13,11 +13,12 @@ enum CellType {
     case NewGroup
 }
 
-class GroupsPreviewViewController: UIViewController, UIScrollViewDelegate{
+class GroupsPreviewViewController: UIViewController, UIScrollViewDelegate, photoViewControllerDelegate{
 
     @IBOutlet weak var groupCollectionView: UICollectionView!
     
     var newGroupIndexPath: IndexPath?
+    var selectedIndexPath: IndexPath?
     
     var groupViewModels: [GroupViewModel] = []
  //   var groupViewModel = GroupViewModel()
@@ -27,7 +28,7 @@ class GroupsPreviewViewController: UIViewController, UIScrollViewDelegate{
         super.viewDidLoad()
         
         if groupViewModels.isEmpty {
-            groupViewModels.append(GroupViewModel(name: "New Album", thumbNails: [], numberOfPhotos: ""))
+            groupViewModels.append(GroupViewModel(name: "New Album", photoViewModels: [], numberOfPhotos: ""))
         }
 //
 //        groups = [Group(name: "Studio Work", photos: nil),
@@ -52,21 +53,23 @@ class GroupsPreviewViewController: UIViewController, UIScrollViewDelegate{
         super.viewWillAppear(animated)
         self.navigationController?.navigationBar.isHidden = true
         self.navigationItem.title = ""
+        
+        
     }
+    
+    func updateGroup(groupViewModel: GroupViewModel) {
+        groupCollectionView.reloadItems(at: [selectedIndexPath!])
+    }
+
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "goToAlbum" {
             if let photoViewController = segue.destination as? PhotoViewController {
+                photoViewController.delegate = self
                 let index = groupCollectionView.indexPathsForSelectedItems?.first
-                photoViewController.g
-                
+                photoViewController.groupViewModel = groupViewModels[(index?.row)!]
             }
-//            photoViewController.groupBlock{ (group) -> () in
-                
-//            }
-//                controller.selectedName = objects[indexPath.row]
-//            }
         }
     }
 
@@ -74,7 +77,7 @@ class GroupsPreviewViewController: UIViewController, UIScrollViewDelegate{
         
         newGroupIndexPath = self.getNearestVisiableIndexPath(collectionView: groupCollectionView)
         self.groupCollectionView?.performBatchUpdates({
-            groupViewModels.append(GroupViewModel(name: "New Album", thumbNails: [], numberOfPhotos: ""))
+            groupViewModels.append(GroupViewModel(name: "New Album", photoViewModels: [], numberOfPhotos: ""))
             guard let newGroupIndexPath = newGroupIndexPath else { return }
                 self.groupCollectionView?.insertItems(at: [newGroupIndexPath])
 
@@ -131,7 +134,7 @@ class GroupsPreviewViewController: UIViewController, UIScrollViewDelegate{
     }
     
     func isEmptyGroup(group: GroupViewModel) -> Bool {
-       return group.thumbNails.isEmpty
+        return (group.photoViewModels?.isEmpty)!
     }
 }
 
@@ -141,6 +144,11 @@ extension GroupsPreviewViewController: UICollectionViewDelegate {
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: 325, height: 386)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        selectedIndexPath = indexPath
+        performSegue(withIdentifier: "goToAlbum", sender: indexPath)
     }
 
 }
@@ -159,12 +167,13 @@ extension GroupsPreviewViewController: UICollectionViewDataSource {
             }
         }
         
-        if groupViewModels.count == 1 && isEmptyGroup(group: groupViewModels.first!) {
-            if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "EmptyGroupCell", for: indexPath) as? EmptyGroupCell {
-                cell.groupTitleLabel.text = "New Album"
-                return cell
-            }
-        } else {
+//        if groupViewModels.count == 1 && isEmptyGroup(group: groupViewModels.first!) {
+//            if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "EmptyGroupCell", for: indexPath) as? EmptyGroupCell {
+//                cell.groupTitleLabel.text = groupViewModels.first
+//                return cell
+//            }
+//        }
+        else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "GroupPreviewCell", for: indexPath) as! GroupPreviewCell
             if groupViewModels.count > 0 {
                 cell.groupTitleLabel.text = groupViewModels[indexPath.row].name

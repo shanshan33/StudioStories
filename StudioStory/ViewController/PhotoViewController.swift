@@ -9,15 +9,20 @@
 
 import UIKit
 
+protocol photoViewControllerDelegate: class {
+    func updateGroup(groupViewModel: GroupViewModel)
+}
 class PhotoViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIGestureRecognizerDelegate {
 
     var photosPicker = PhotosPicker()
     var photoStories: [PhotoStory] = []
 
     @IBOutlet weak var numberOfPhotoLabel: UILabel!
-    
+
     var photoViewModels: [PhotoViewModel] = []
     var photoViewModel = PhotoViewModel()
+    var groupViewModel = GroupViewModel()
+
     var pictures: [UIImage] = []
     @IBOutlet weak var addPhotoView: UIView!
     @IBOutlet weak var PhotosCollectionView: UICollectionView!
@@ -30,6 +35,9 @@ class PhotoViewController: UIViewController, UIImagePickerControllerDelegate, UI
         }
     }
     
+     var delegate: photoViewControllerDelegate?
+    
+    
     //MARK: Internal Properties
     var groupBlock: ((Group) -> Void)?
     
@@ -39,6 +47,8 @@ class PhotoViewController: UIViewController, UIImagePickerControllerDelegate, UI
         groupPhotosView.layer.cornerRadius = 16
         groupPhotoViewHeader.layer.cornerRadius = 16
         self.navigationController?.navigationBar.isHidden = false
+        
+        setupViewModel(groupViewModel: groupViewModel)
         
         let longPress = UILongPressGestureRecognizer(target: self, action: #selector(longPressToDelete))
         longPress.minimumPressDuration = 3
@@ -64,6 +74,12 @@ class PhotoViewController: UIViewController, UIImagePickerControllerDelegate, UI
         self.navigationController?.navigationBar.isTranslucent = true
     }
     
+    func setupViewModel(groupViewModel: GroupViewModel) {
+        if let photos = groupViewModel.photoViewModels {
+            self.photoViewModels = photos
+        }
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
@@ -82,8 +98,9 @@ class PhotoViewController: UIViewController, UIImagePickerControllerDelegate, UI
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         let title =  self.groupTitleTextField.text ?? "New Album"
-        let group = Group(name: title, photos: self.pictures, numberOfPhoto: self.pictures.count)
-        self.groupBlock?(group)
+        let group =  GroupViewModel(name: title, photoViewModels: self.photoViewModels, numberOfPhotos:"\(self.pictures.count)")
+  //      self.groupBlock?(group)
+        delegate?.updateGroup(groupViewModel: group)
     }
     
     @IBAction func addPhotoButtonTaped(_ sender: UIButton) {
