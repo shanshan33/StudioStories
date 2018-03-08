@@ -13,14 +13,12 @@ class PhotoViewController: UIViewController, UIImagePickerControllerDelegate, UI
 
     var photosPicker = PhotosPicker()
     var photoStories: [PhotoStory] = []
-    var pictures: [UIImage] = []
 
     @IBOutlet weak var numberOfPhotoLabel: UILabel!
     
     var photoViewModels: [PhotoViewModel] = []
-        
     var photoViewModel = PhotoViewModel()
-    
+    var pictures: [UIImage] = []
     @IBOutlet weak var addPhotoView: UIView!
     @IBOutlet weak var PhotosCollectionView: UICollectionView!
     @IBOutlet weak var groupPhotoViewHeader: UIView!
@@ -71,6 +69,9 @@ class PhotoViewController: UIViewController, UIImagePickerControllerDelegate, UI
 
         let title =  self.groupTitleTextField.text ?? "New Album"
         photoViewModel.fetchPickedPhoto(groupName: title) { (photo) in
+            if let image = photo?.image {
+                self.pictures.append(image)
+            }
             self.photoViewModels.append(photo!)
             self.PhotosCollectionView.reloadData()
             self.viewWillLayoutSubviews()
@@ -80,7 +81,8 @@ class PhotoViewController: UIViewController, UIImagePickerControllerDelegate, UI
 
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        let group = Group(name: self.groupTitleTextField.text, photos:self.photoStories)
+        let title =  self.groupTitleTextField.text ?? "New Album"
+        let group = Group(name: title, photos: self.pictures, numberOfPhoto: self.pictures.count)
         self.groupBlock?(group)
     }
     

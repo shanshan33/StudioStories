@@ -15,12 +15,8 @@ class PhotoViewModel {
     var description: String?
     var createDate: String?
     var groupName: String?
-//    var imageMainColors: [UIColor]?
-//    var imageMainHexColors: [String]?
-    
     var photosPicker = PhotosPicker()
 
-    
     convenience init(description: String? = nil, image: UIImage?, createDate: String, groupName: String? ) {
         self.init()
         self.description = description

@@ -9,15 +9,36 @@
 import Foundation
 import UIKit
 
-struct GroupViewModel {
+class GroupViewModel {
     var name: String?
-    var photoThumbnails: [UIImage]
-//    var photos: [PhotoStory]?
+    var numberOfPhotos: String?
+    var photos: [UIImage]
     
-    init(name: String?, photoThumbnails: [UIImage]) {
+    init(name: String?, photos: [UIImage], numberOfPhotos: String?) {
         self.name = name
-        self.photoThumbnails = photoThumbnails
+        self.photos = photos
+        self.numberOfPhotos = numberOfPhotos
     }
     
+//    convenience init(group: Group) {
+//        self.init()
+//        self.name = group.name
+//        self.numberOfPhotos = formatNumberOfPhotos(number: group.numberOfPhoto!)
+// //       self.thumbNails = thumbnails(width: 80, photos: group.thumbnails)
+//    }
+    
+    private func formatNumberOfPhotos(number: Int) -> String {
+        return number > 0 ? "∙ \(number)" : ""
+    }
+    
+    func thumbnails(width: CGFloat, photos:[PhotoViewModel]) -> [UIImage] {
+        var newPhotos: [UIImage] = []
+        for photo in photos {
+            if let resizePhoto = photo.image?.resizeBy(width: width) {
+            newPhotos.append(resizePhoto)
+            }
+        }
+        return newPhotos
+    }
     
 }

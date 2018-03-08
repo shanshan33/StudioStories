@@ -10,11 +10,13 @@ import UIKit
 
 public struct Group {
     var name: String?
-    var photos: [PhotoStory]?
+    var photos: [UIImage]?
+    var numberOfPhoto: Int?
     
-    init(name: String?, photos: [PhotoStory]?) {
+    init(name: String?, photos: [UIImage]?, numberOfPhoto: Int?) {
         self.name = name
         self.photos = photos
+        self.numberOfPhoto = numberOfPhoto
     }
 }
 

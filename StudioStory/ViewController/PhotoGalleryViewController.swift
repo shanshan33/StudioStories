@@ -30,13 +30,10 @@ class PhotoGalleryViewController: UIViewController, UIGestureRecognizerDelegate 
     @IBOutlet weak var Footer: UIView!
 
     var frameOrigin: CGRect?
-    var story: PhotoStory?
-    
     var photoViewModel = PhotoViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
- //       setupPhotoGallery(story!)
  //       photoImageView.layer.cornerRadius = 16
    //     photoImageView.clipsToBounds = true
         
@@ -52,10 +49,8 @@ class PhotoGalleryViewController: UIViewController, UIGestureRecognizerDelegate 
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        
         photoInfoScrollView.contentOffset = CGPoint(x: 0, y: -452)
         photoInfoScrollView.contentInset = UIEdgeInsets(top: 452, left: 0, bottom: 0, right: 0)
-
     }
     
     
@@ -93,7 +88,6 @@ class PhotoGalleryViewController: UIViewController, UIGestureRecognizerDelegate 
         
         var hexArray: [String] = []
         photo.getColors { colors in
-            
             for (index, colorView) in self.colorsStackView.subviews.enumerated() {
                 colorView.backgroundColor = colors[index]
             }
@@ -170,13 +164,12 @@ class PhotoGalleryViewController: UIViewController, UIGestureRecognizerDelegate 
             guard let image = self.photoViewModel.image else { return }
             UIImageWriteToSavedPhotosAlbum(image, self, #selector(self.image(_:didFinishSavingWithError:contextInfo:)), nil)
         }
-        
-        let item2 = UIPreviewAction(title: "Item2", style: .destructive) {
-            (action, vc) in
-            // run item 2 action
-        }
-        
-        return [item1, item2]
+//
+//        let item2 = UIPreviewAction(title: "Item2", style: .destructive) {
+//            (action, vc) in
+//            // run item 2 action
+//        }
+        return [item1]
     }
 }
 
@@ -194,7 +187,6 @@ extension PhotoGalleryViewController: UIScrollViewDelegate {
             print("scroll up, offset \(offsetY)")
             photoImageView.frame.size.height = photoImageView.frame.height
         }
-
     }
 }
 
