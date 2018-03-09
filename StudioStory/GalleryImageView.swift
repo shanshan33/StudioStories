@@ -30,7 +30,6 @@ class GalleryImageView: UIImageView {
             
             return CGSize(width: myViewWidth, height: scaledHeight)
         }
-        
         return CGSize(width: -1.0, height: -1.0)
     }
     
@@ -42,7 +41,7 @@ class GalleryImageView: UIImageView {
     
     private func configShadow() {
         
-        //      photoImageView.layer.cornerRadius = 16
+        self.layer.cornerRadius = 16
         //      photoImageView.layer.borderColor = UIColor.white.cgColor
         //       photoImageView.layer.borderWidth = 2.0
         
