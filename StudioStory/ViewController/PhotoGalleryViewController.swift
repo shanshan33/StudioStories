@@ -146,20 +146,21 @@ class PhotoGalleryViewController: UIViewController, UIGestureRecognizerDelegate 
         super.didReceiveMemoryWarning()
     }
     
-    var colorPaletteOpened: Bool = false
+    var colorPaletteisOpened: Bool = false
+    @IBOutlet weak var colorButton: UIButton!
     
     @IBAction func showColorPalette(_ sender: UIButton) {
-        if !colorPaletteOpened {
+        if !colorPaletteisOpened {
             UIView.animate(withDuration: 0.2) {
                 self.photoInfoScrollView.contentOffset = CGPoint(x: 0, y: -322)
                 self.photoImageView.frame.size.height = 322
-                self.colorPaletteOpened = true
+                self.colorPaletteisOpened = true
             }
         } else {
             UIView.animate(withDuration: 0.2) {
                 self.photoInfoScrollView.contentOffset = CGPoint(x: 0, y: -452)
                 self.photoImageView.frame.size.height = 452
-                self.colorPaletteOpened = false
+                self.colorPaletteisOpened = false
             }
         }
     }
@@ -190,10 +191,8 @@ extension PhotoGalleryViewController: UIScrollViewDelegate {
         photoInfoScrollView.contentSize = CGSize(width: photoInfoScrollView.frame.size.width, height: 130)
         let offsetY = scrollView.contentOffset.y
         
-        if offsetY < 0
-        {
+        if offsetY < 0 {
             print("scroll down, offset \(offsetY)")
-
             photoImageView.frame.size.height = -offsetY
         } else {
             print("scroll up, offset \(offsetY)")

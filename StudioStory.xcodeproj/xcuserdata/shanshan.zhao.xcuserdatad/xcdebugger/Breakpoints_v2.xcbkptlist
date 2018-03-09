@@ -42,7 +42,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "StudioStory/ViewController/PhotoGalleryViewController.swift"
-            timestampString = "542299930.768774"
+            timestampString = "542304253.4152369"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "94"
@@ -58,7 +58,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "StudioStory/ViewController/PhotoGalleryViewController.swift"
-            timestampString = "542299930.768833"
+            timestampString = "542304253.415607"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "140"
@@ -160,70 +160,6 @@
             startingLineNumber = "61"
             endingLineNumber = "61"
             landmarkName = "updateGroup(groupViewModel:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "StudioStory/ViewController/PhotoGalleryViewController.swift"
-            timestampString = "542299930.768926"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "159"
-            endingLineNumber = "159"
-            landmarkName = "showColorPalette(_:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "StudioStory.PhotoGalleryViewController.showColorPalette(__ObjC.UIButton) -&gt; ()"
-                  moduleName = "StudioStory"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/shanshan.zhao/Documents/StudioStory/StudioStory/ViewController/PhotoGalleryViewController.swift"
-                  timestampString = "542299930.882514"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "159"
-                  endingLineNumber = "159"
-                  offsetFromSymbolStart = "344">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #2 () -&gt; () in StudioStory.PhotoGalleryViewController.showColorPalette(__ObjC.UIButton) -&gt; ()"
-                  moduleName = "StudioStory"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/shanshan.zhao/Documents/StudioStory/StudioStory/ViewController/PhotoGalleryViewController.swift"
-                  timestampString = "542299930.884529"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "160"
-                  endingLineNumber = "160"
-                  offsetFromSymbolStart = "28">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "StudioStory/Cells/PhotoStoryCell.swift"
-            timestampString = "542299930.76897"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "32"
-            endingLineNumber = "32"
-            landmarkName = "createCellShadow()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

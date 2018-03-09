@@ -378,24 +378,49 @@
                                             <constraint firstItem="PL2-bo-9oF" firstAttribute="trailing" secondItem="GXo-du-udk" secondAttribute="trailing" id="BYf-DU-SyF"/>
                                         </constraints>
                                     </stackView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8S0-lf-svT">
-                                        <rect key="frame" x="316" y="0.0" width="30" height="30"/>
-                                        <state key="normal" title="🎨">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8S0-lf-svT">
+                                        <rect key="frame" x="312" y="0.0" width="34" height="34"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="34" id="LYv-Eu-lZ1"/>
+                                            <constraint firstAttribute="height" constant="34" id="OHS-K2-94V"/>
+                                        </constraints>
+                                        <state key="normal" image="Ic_colorClose">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
                                             <action selector="showColorPalette:" destination="Ue4-0A-ca0" eventType="touchUpInside" id="MXX-HR-iXg"/>
                                         </connections>
                                     </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Color" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cY0-wG-Q3G">
+                                        <rect key="frame" x="312" y="36.5" width="34" height="20"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="34" id="5xs-eS-Bwe"/>
+                                            <constraint firstAttribute="height" constant="20" id="B1Z-5K-R5y"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="PinkTitle" translatesAutoresizingMaskIntoConstraints="NO" id="wYW-hO-dDM">
+                                        <rect key="frame" x="25" y="50" width="25" height="4"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="4" id="AdQ-cj-XpL"/>
+                                            <constraint firstAttribute="width" constant="25" id="MRG-l2-D1T"/>
+                                        </constraints>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstItem="cY0-wG-Q3G" firstAttribute="centerX" secondItem="8S0-lf-svT" secondAttribute="centerX" id="8rw-cl-WEz"/>
                                     <constraint firstItem="8S0-lf-svT" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="ICs-qZ-taY" secondAttribute="trailing" constant="8" symbolic="YES" id="9Lg-nt-wzx"/>
                                     <constraint firstItem="ICs-qZ-taY" firstAttribute="top" secondItem="8S0-lf-svT" secondAttribute="top" id="HaB-wU-Ccr"/>
+                                    <constraint firstItem="wYW-hO-dDM" firstAttribute="leading" secondItem="GGs-Ih-fU4" secondAttribute="leading" constant="25" id="Itq-6L-iRA"/>
                                     <constraint firstItem="ICs-qZ-taY" firstAttribute="top" secondItem="GGs-Ih-fU4" secondAttribute="top" id="Jhh-0f-57A"/>
                                     <constraint firstItem="ICs-qZ-taY" firstAttribute="leading" secondItem="GGs-Ih-fU4" secondAttribute="leading" constant="26" id="f0g-V5-tfH"/>
+                                    <constraint firstItem="wYW-hO-dDM" firstAttribute="top" secondItem="ICs-qZ-taY" secondAttribute="bottom" constant="6" id="hhz-cm-nJO"/>
                                     <constraint firstAttribute="height" constant="70" id="qrm-T8-tXu"/>
                                     <constraint firstAttribute="trailing" secondItem="8S0-lf-svT" secondAttribute="trailing" constant="29" id="wwS-JR-NcO"/>
+                                    <constraint firstItem="cY0-wG-Q3G" firstAttribute="baseline" secondItem="wYW-hO-dDM" secondAttribute="baseline" id="yAd-uD-2uC"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -429,6 +454,7 @@
                         <outlet property="RGBstackView" destination="qKp-Nj-Frg" id="r05-3M-Hly"/>
                         <outlet property="backgroudStackView" destination="Dpo-iu-CEw" id="5d6-AV-pGW"/>
                         <outlet property="closeButton" destination="Ouo-gM-JxK" id="Wip-Vy-orR"/>
+                        <outlet property="colorButton" destination="8S0-lf-svT" id="Azq-8P-oqc"/>
                         <outlet property="colorsStackView" destination="GCN-JD-iuX" id="6J9-Ms-5ma"/>
                         <outlet property="groupNameLabel" destination="rwB-0d-R2a" id="gQa-Iy-m2x"/>
                         <outlet property="infoStackView" destination="ICs-qZ-taY" id="krK-yL-CBA"/>
@@ -784,6 +810,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Ic_colorClose" width="32" height="31"/>
         <image name="PinkTitle" width="25" height="4"/>
         <image name="Studio_Skype" width="64" height="92"/>
         <image name="addGroup" width="36" height="32"/>
