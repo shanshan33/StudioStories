@@ -12,7 +12,7 @@ import QuartzCore
 class PhotoGalleryViewController: UIViewController, UIGestureRecognizerDelegate {
 
     @IBOutlet weak var photoInfoScrollView: UIScrollView!
-    @IBOutlet weak var photoImageView: UIImageView!
+    @IBOutlet weak var photoImageView: GalleryImageView!
     @IBOutlet weak var photoBackgroundView: UIView!
     @IBOutlet weak var closeButton: UIButton!
     @IBOutlet weak var infoStackView: UIStackView!
@@ -26,6 +26,8 @@ class PhotoGalleryViewController: UIViewController, UIGestureRecognizerDelegate 
     @IBOutlet weak var colorView: UIView!
     @IBOutlet weak var colorsStackView: UIStackView!
     @IBOutlet weak var RGBstackView: UIStackView!
+    
+    @IBOutlet weak var backgroudStackView: UIStackView!
     
     @IBOutlet weak var Footer: UIView!
 
@@ -49,10 +51,28 @@ class PhotoGalleryViewController: UIViewController, UIGestureRecognizerDelegate 
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
+        photoImageView.invalidateIntrinsicContentSize()
+
         photoInfoScrollView.contentOffset = CGPoint(x: 0, y: -452)
         photoInfoScrollView.contentInset = UIEdgeInsets(top: 452, left: 0, bottom: 0, right: 0)
+
     }
     
+    
+    private func configGalleryShadow() {
+        
+  //      photoImageView.layer.cornerRadius = 16
+  //      photoImageView.layer.borderColor = UIColor.white.cgColor
+ //       photoImageView.layer.borderWidth = 2.0
+
+        //     photoImageView.clipsToBounds = false
+        photoImageView.layer.shadowColor = UIColor(red:0, green:0, blue:0, alpha:0.15).cgColor
+        photoImageView.layer.shadowOpacity = 1.0
+        photoImageView.layer.shadowOffset = CGSize(width: 0, height: 8.0)
+        photoImageView.layer.shadowRadius = 21.0
+        photoImageView.layer.shadowPath = UIBezierPath(rect: photoImageView.bounds).cgPath
+        photoImageView.layer.masksToBounds = false
+    }
     
     func setupPhotoGallery(photoViewModel: PhotoViewModel) {
         guard let photo = photoViewModel.image else { return }
@@ -65,6 +85,7 @@ class PhotoGalleryViewController: UIViewController, UIGestureRecognizerDelegate 
         photo.getColors { colors in
             for (index, colorView) in self.colorsStackView.subviews.enumerated() {
                 colorView.backgroundColor = colors[index]
+                colorView.roundCorners([.topLeft, .topRight], radius: 4)
             }
             for color in colors {
                 hexArray.append(color.toHex()!)
@@ -74,14 +95,35 @@ class PhotoGalleryViewController: UIViewController, UIGestureRecognizerDelegate 
                     label.text = "#\(hexArray[index])"
                 }
             }
+            
+            for background in self.backgroudStackView.subviews {
+           //     self.addShadowTo(colorView: background)
+                background.layer.cornerRadius = 4
+
+            }
             print("colors: \(colors)")
         }
 
     }
     
+    private func addShadowTo(colorView: UIView) {
+ 
+        colorView.layer.cornerRadius = 4
+//        colorView.backgroundColor = UIColor(red:0.82, green:0.01, blue:0.11, alpha:1)
+        colorView.layer.borderWidth = 2
+        colorView.layer.borderColor = UIColor.white.cgColor
+        colorView.layer.shadowOffset = CGSize(width: 0, height: 4)
+        colorView.layer.shadowColor = UIColor(red:0, green:0, blue:0, alpha:0.08).cgColor
+        colorView.layer.shadowOpacity = 1
+        colorView.layer.shadowRadius = 10
+        colorView.layer.masksToBounds = false
+//        colorView.layer.shadowPath = UIBezierPath(roundedRect:colorView.bounds, cornerRadius:colorView.layer.cornerRadius).cgPath
+        
+    }
+    
     func setupPhotoGallery(_ photoStory: PhotoStory) {
         guard let photo = photoStory.image else { return }
-        self.photoImageView.image = photo.radiusImage(32, size: photo.size)
+        self.photoImageView.image = photo.radiusImage(16, size: photoImageView.frame.size)
         photoImageView.clipsToBounds = true
         self.groupNameLabel.text = photoStory.groupName
         self.photoCreateDateLabel.text = "Uploaded \(dateToString(dateToString: photoStory.createDate!))"
@@ -176,10 +218,11 @@ class PhotoGalleryViewController: UIViewController, UIGestureRecognizerDelegate 
 extension PhotoGalleryViewController: UIScrollViewDelegate {
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        photoInfoScrollView.contentSize = CGSize(width: photoInfoScrollView.frame.size.width, height: 100)
+        photoInfoScrollView.contentSize = CGSize(width: photoInfoScrollView.frame.size.width, height: 130)
         let offsetY = scrollView.contentOffset.y
         
-        if offsetY < 0 && offsetY < -352 {
+        if offsetY < 0
+        {
             print("scroll down, offset \(offsetY)")
 
             photoImageView.frame.size.height = -offsetY
@@ -187,6 +230,8 @@ extension PhotoGalleryViewController: UIScrollViewDelegate {
             print("scroll up, offset \(offsetY)")
             photoImageView.frame.size.height = photoImageView.frame.height
         }
+ //       photoImageView.invalidateIntrinsicContentSize()
+
     }
 }
 

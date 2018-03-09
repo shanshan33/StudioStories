@@ -58,11 +58,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "StudioStory/ViewController/PhotoGalleryViewController.swift"
-            timestampString = "542211183.557369"
+            timestampString = "542296981.4200619"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "92"
-            endingLineNumber = "92"
+            startingLineNumber = "134"
+            endingLineNumber = "134"
             landmarkName = "setupPhotoGallery(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -74,27 +74,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "StudioStory/ViewController/PhotoGalleryViewController.swift"
-            timestampString = "542211183.5574419"
+            timestampString = "542296981.42055"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "50"
-            endingLineNumber = "50"
-            landmarkName = "viewDidLayoutSubviews()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "StudioStory/ViewController/PhotoGalleryViewController.swift"
-            timestampString = "542211183.557494"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "138"
-            endingLineNumber = "138"
+            startingLineNumber = "180"
+            endingLineNumber = "180"
             landmarkName = "dismissFullscreenImage(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -102,43 +86,11 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "StudioStory/ViewController/PhotoGalleryViewController.swift"
-            timestampString = "542211183.557542"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "175"
-            endingLineNumber = "175"
-            landmarkName = "unknown"
-            landmarkType = "0">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "StudioStory/ViewController/PhotoViewController.swift"
-            timestampString = "542211183.557606"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "207"
-            endingLineNumber = "207"
-            landmarkName = "collectionView(_:didSelectItemAt:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "StudioStory/ViewController/GroupsPreviewViewController.swift"
-            timestampString = "542211183.557677"
+            timestampString = "542295240.546735"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "95"
@@ -150,11 +102,11 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "StudioStory/ViewController/GroupsPreviewViewController.swift"
-            timestampString = "542211183.558135"
+            timestampString = "542295240.547087"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "84"
@@ -163,14 +115,14 @@
             landmarkType = "7">
             <Locations>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "StudioStory.GroupsPreviewViewController.addNewGroup(__ObjC.UIButton) -&gt; ()"
                   moduleName = "StudioStory"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/shanshan.zhao/Documents/StudioStory/StudioStory/ViewController/GroupsPreviewViewController.swift"
-                  timestampString = "542211183.776746"
+                  timestampString = "542279538.205489"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "84"
@@ -178,14 +130,14 @@
                   offsetFromSymbolStart = "540">
                </Location>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "closure #1 () -&gt; () in StudioStory.GroupsPreviewViewController.addNewGroup(__ObjC.UIButton) -&gt; ()"
                   moduleName = "StudioStory"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/shanshan.zhao/Documents/StudioStory/StudioStory/ViewController/GroupsPreviewViewController.swift"
-                  timestampString = "542211183.78128"
+                  timestampString = "542279538.207167"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "84"
@@ -202,7 +154,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "StudioStory/ViewController/GroupsPreviewViewController.swift"
-            timestampString = "542211183.5584641"
+            timestampString = "542295240.547567"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "139"
@@ -214,43 +166,11 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "StudioStory/ViewController/PhotoViewController.swift"
-            timestampString = "542211183.558749"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "51"
-            endingLineNumber = "51"
-            landmarkName = "viewDidLoad()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "StudioStory/ViewController/PhotoViewController.swift"
-            timestampString = "542211183.558809"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "103"
-            endingLineNumber = "103"
-            landmarkName = "viewWillDisappear(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "StudioStory/ViewController/GroupsPreviewViewController.swift"
-            timestampString = "542211183.558861"
+            timestampString = "542295240.547846"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "61"
@@ -265,13 +185,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "StudioStory/ViewController/GroupsPreviewViewController.swift"
-            timestampString = "542211183.559088"
+            filePath = "StudioStory/ViewController/PhotoGalleryViewController.swift"
+            timestampString = "542296981.4208159"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "162"
-            endingLineNumber = "162"
-            landmarkName = "collectionView(_:cellForItemAt:)"
+            startingLineNumber = "64"
+            endingLineNumber = "64"
+            landmarkName = "configGalleryShadow()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -281,13 +201,29 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "StudioStory/ViewController/GroupsPreviewViewController.swift"
-            timestampString = "542211183.5593179"
+            filePath = "StudioStory/GalleryImageView.swift"
+            timestampString = "542295240.548328"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "177"
-            endingLineNumber = "177"
-            landmarkName = "collectionView(_:cellForItemAt:)"
+            startingLineNumber = "45"
+            endingLineNumber = "45"
+            landmarkName = "configShadow()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "StudioStory/ColorPaletteBackgroundView.swift"
+            timestampString = "542296981.4210761"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "28"
+            endingLineNumber = "28"
+            landmarkName = "configShadow()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
