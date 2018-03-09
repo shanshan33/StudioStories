@@ -15,12 +15,15 @@ class PhotoStoryCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        createCellShadow()
-    
         photoImageView.clipsToBounds = true
         photoImageView.layer.cornerRadius = 4
     }
     
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        createCellShadow()
+    }
+
     private func createCellShadow() {
         self.layer.cornerRadius = 4
         self.contentView.layer.cornerRadius = 4
@@ -28,8 +31,8 @@ class PhotoStoryCell: UICollectionViewCell {
         self.layer.shadowColor = UIColor(red:0, green:0, blue:0, alpha:0.08).cgColor
         self.layer.shadowOpacity = 1
         self.layer.shadowRadius = 10
- //       self.layer.masksToBounds = false
- //       self.layer.shadowPath = UIBezierPath(roundedRect:self.bounds, cornerRadius:self.contentView.layer.cornerRadius).cgPath
+        self.layer.masksToBounds = false
+        self.layer.shadowPath = UIBezierPath(rect: self.bounds).cgPath
         
     }
 }
