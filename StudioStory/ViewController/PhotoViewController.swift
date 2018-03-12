@@ -63,7 +63,7 @@ class PhotoViewController: UIViewController, UIImagePickerControllerDelegate, UI
             layout.delegate = self
         }
         
-        if (groupTitleTextField.text?.isEmpty)! {
+        if groupTitleTextField.text == "New Album" {
             groupTitleTextField.becomeFirstResponder()
         }
     }
@@ -75,7 +75,8 @@ class PhotoViewController: UIViewController, UIImagePickerControllerDelegate, UI
     }
     
     func setupViewModel(groupViewModel: GroupViewModel) {
-        if let photos = groupViewModel.photoViewModels {
+        groupTitleTextField.text = groupViewModel.name?.capitalized
+        if let photos = groupViewModel.photoViewModels, photos.count > 0 {
             self.photoViewModels = photos
         }
     }
@@ -97,8 +98,8 @@ class PhotoViewController: UIViewController, UIImagePickerControllerDelegate, UI
 
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        let title =  self.groupTitleTextField.text ?? "New Album"
-        let group =  GroupViewModel(name: title, photoViewModels: self.photoViewModels, numberOfPhotos:"\(self.pictures.count)")
+        let title =  self.groupTitleTextField.text?.capitalized ?? "New Album"
+        let group =  GroupViewModel(name: title, photoViewModels: self.photoViewModels, numberOfPhotos:self.photoViewModels.count)
   //      self.groupBlock?(group)
         delegate?.updateGroup(groupViewModel: group)
     }

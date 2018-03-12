@@ -16,7 +16,6 @@ class GroupPreviewCell: UICollectionViewCell {
     @IBOutlet weak var numberOfPhotosLabel: UILabel!
     
     var groupViewModel = GroupViewModel()
-    var images: [UIImage] = []
     var imageViews: [UIImageView] = []
     
     override func awakeFromNib() {
@@ -40,22 +39,21 @@ class GroupPreviewCell: UICollectionViewCell {
     }
 
     func setCell(groupViewModel: GroupViewModel) {
+        var images: [UIImage] = []
         groupTitleLabel.text = groupViewModel.name
-        numberOfPhotosLabel.text = groupViewModel.numberOfPhotos
+        if let numberOfPhotos = groupViewModel.numberOfPhotos, numberOfPhotos > 0 {
+            numberOfPhotosLabel.text = "∙ \(numberOfPhotos)"
+        } else {
+            numberOfPhotosLabel.text =  ""
+        }
+    
         if let models = groupViewModel.photoViewModels {
             for photoViewModel in models {
-                self.images.append(photoViewModel.image!)
+                images.append(photoViewModel.image!)
             }
-            for i in 0..<self.images.count{
-                imageViews[i].image = self.images[i]
+            for i in 0..<images.count{
+                imageViews[i].image = images[i]
             }
-        }
-    }
-
-    private func configImagePreview() {
-        for i in 0..<self.images.count{
-            imageViews[i].image = self.images[i]
-  //          createShadow(imageView: imageViews[i])
         }
     }
     

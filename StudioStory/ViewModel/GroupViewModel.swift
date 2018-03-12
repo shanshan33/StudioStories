@@ -11,10 +11,10 @@ import UIKit
 
 class GroupViewModel {
     var name: String?
-    var numberOfPhotos: String?
+    var numberOfPhotos: Int?
     var photoViewModels: [PhotoViewModel]?
     
-    convenience init(name: String?, photoViewModels: [PhotoViewModel]? = nil, numberOfPhotos: String? = nil) {
+    convenience init(name: String?, photoViewModels: [PhotoViewModel]? = nil, numberOfPhotos: Int? = nil) {
         self.init()
         self.name = name
         self.photoViewModels = photoViewModels
