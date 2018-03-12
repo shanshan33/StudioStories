@@ -28,7 +28,7 @@ class GroupsPreviewViewController: UIViewController, UIScrollViewDelegate, photo
         super.viewDidLoad()
         
         if groupViewModels.isEmpty {
-            groupViewModels.append(GroupViewModel(name: "New Album", photoViewModels: [], numberOfPhotos: ""))
+            groupViewModels.append(GroupViewModel(name: "Inspiration Studio", photoViewModels: [], numberOfPhotos: ""))
         }
 //
 //        groups = [Group(name: "Studio Work", photos: nil),
@@ -58,6 +58,7 @@ class GroupsPreviewViewController: UIViewController, UIScrollViewDelegate, photo
     }
     
     func updateGroup(groupViewModel: GroupViewModel) {
+        groupViewModels[(selectedIndexPath?.row)!] = groupViewModel
         groupCollectionView.reloadItems(at: [selectedIndexPath!])
     }
 
@@ -176,7 +177,7 @@ extension GroupsPreviewViewController: UICollectionViewDataSource {
         else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "GroupPreviewCell", for: indexPath) as! GroupPreviewCell
             if groupViewModels.count > 0 {
-                cell.groupTitleLabel.text = groupViewModels[indexPath.row].name
+                cell.setCell(groupViewModel: groupViewModels[indexPath.row])
             }
             return cell
         }

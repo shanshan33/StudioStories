@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F3322A18205693B80020D9F2 /* PreviewImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3322A17205693B80020D9F2 /* PreviewImageView.swift */; };
 		F346CA4620501AE600E058D6 /* GroupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F346CA4520501AE600E058D6 /* GroupViewModel.swift */; };
 		F346CA4820501C4000E058D6 /* PhotoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F346CA4720501C4000E058D6 /* PhotoViewModel.swift */; };
 		F3481E59203B04FA00B68183 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3481E58203B04FA00B68183 /* AppDelegate.swift */; };
@@ -52,6 +53,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F3322A17205693B80020D9F2 /* PreviewImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewImageView.swift; sourceTree = "<group>"; };
 		F346CA4520501AE600E058D6 /* GroupViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupViewModel.swift; sourceTree = "<group>"; };
 		F346CA4720501C4000E058D6 /* PhotoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewModel.swift; sourceTree = "<group>"; };
 		F3481E55203B04FA00B68183 /* StudioStory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StudioStory.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -147,6 +149,7 @@
 				F3481E8B203B0DD400B68183 /* PhotosPicker.swift */,
 				F3D349332049A53D0022DE9B /* UIImageColors.swift */,
 				F35CF5F8205285B400256503 /* GalleryImageView.swift */,
+				F3322A17205693B80020D9F2 /* PreviewImageView.swift */,
 				F3C0F28E2052C9F000EDBF10 /* ColorPaletteBackgroundView.swift */,
 				F38CCE692047044500200F33 /* Models */,
 				F3E2250C20406AA8007DB05C /* Cells */,
@@ -361,6 +364,7 @@
 				F3481E8A203B0A2F00B68183 /* PhotoStoryCell.swift in Sources */,
 				F346CA4820501C4000E058D6 /* PhotoViewModel.swift in Sources */,
 				F3481E92203C5C5600B68183 /* PhotoGalleryViewController.swift in Sources */,
+				F3322A18205693B80020D9F2 /* PreviewImageView.swift in Sources */,
 				F3481E90203C5C1900B68183 /* PhotoViewController.swift in Sources */,
 				F35CF5F9205285B400256503 /* GalleryImageView.swift in Sources */,
 				F38CCE6D20480EDB00200F33 /* GroupPreviewFlowLayout.swift in Sources */,
