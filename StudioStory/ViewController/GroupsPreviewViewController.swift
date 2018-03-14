@@ -15,7 +15,7 @@ enum CellType {
 
 class GroupsPreviewViewController: UIViewController, UIScrollViewDelegate, photoViewControllerDelegate{
 
-    @IBOutlet weak var groupCollectionView: UICollectionView!
+    @IBOutlet weak var groupCollectionView: ScalingCarouselView!
     
     var newGroupIndexPath: IndexPath?
     var selectedIndexPath: IndexPath?
@@ -29,6 +29,12 @@ class GroupsPreviewViewController: UIViewController, UIScrollViewDelegate, photo
         if groupViewModels.isEmpty {
             groupViewModels.append(GroupViewModel(name: "Inspiration Studio", photoViewModels: [], numberOfPhotos: 0))
         }
+        
+        groupCollectionView.translatesAutoresizingMaskIntoConstraints = false
+        
+        groupCollectionView.widthAnchor.constraint(equalToConstant: 375).isActive = true
+        groupCollectionView.heightAnchor.constraint(equalToConstant: 456).isActive = true
+        groupCollectionView.inset = 25
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -53,6 +59,11 @@ class GroupsPreviewViewController: UIViewController, UIScrollViewDelegate, photo
             }
         }
     }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        groupCollectionView.didScroll()
+    }
+
 
     @IBAction func addNewGroup(_ sender: UIButton) {
         
@@ -85,7 +96,7 @@ class GroupsPreviewViewController: UIViewController, UIScrollViewDelegate, photo
 //            snapToNearestVisiableCell(scrollView as! UICollectionView)
 //        }
 //    }
-//
+//git
     func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
         snapToNearestVisiableCell(scrollView as! UICollectionView)
     }
@@ -119,7 +130,7 @@ class GroupsPreviewViewController: UIViewController, UIScrollViewDelegate, photo
     }
 }
 
-extension GroupsPreviewViewController: UICollectionViewDelegate {
+extension GroupsPreviewViewController: UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
  
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,

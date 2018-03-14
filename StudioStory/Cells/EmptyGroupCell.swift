@@ -8,7 +8,7 @@
 
 import UIKit
 
-class EmptyGroupCell: UICollectionViewCell {
+class EmptyGroupCell: ScalingCarouselCell {
     
     @IBOutlet weak var groupTitleLabel: UILabel!
     

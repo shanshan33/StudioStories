@@ -8,7 +8,7 @@
 
 import UIKit
 
-class GroupPreviewCell: UICollectionViewCell {
+class GroupPreviewCell: ScalingCarouselCell {
     
     @IBOutlet weak var imagePreviewStackView: UIStackView!
     

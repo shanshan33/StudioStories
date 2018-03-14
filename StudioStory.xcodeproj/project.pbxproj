@@ -24,6 +24,10 @@
 		F3481E92203C5C5600B68183 /* PhotoGalleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3481E91203C5C5600B68183 /* PhotoGalleryViewController.swift */; };
 		F35CF5F9205285B400256503 /* GalleryImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F35CF5F8205285B400256503 /* GalleryImageView.swift */; };
 		F365DC982044410E003CA1C0 /* PhotoStoryLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = F365DC972044410E003CA1C0 /* PhotoStoryLayout.swift */; };
+		F36765CD20581E680041F228 /* GroupsFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36765CC20581E680041F228 /* GroupsFlowLayout.swift */; };
+		F36765D12058204C0041F228 /* ScalingCarouselLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36765CE2058204C0041F228 /* ScalingCarouselLayout.swift */; };
+		F36765D22058204C0041F228 /* ScalingCarouselView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36765CF2058204C0041F228 /* ScalingCarouselView.swift */; };
+		F36765D32058204C0041F228 /* ScalingCarouselCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36765D02058204C0041F228 /* ScalingCarouselCell.swift */; };
 		F38CCE662046FE9800200F33 /* EmptyGroupCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38CCE652046FE9800200F33 /* EmptyGroupCell.swift */; };
 		F38CCE682047039D00200F33 /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38CCE672047039D00200F33 /* Group.swift */; };
 		F38CCE6B2047046200200F33 /* PhotoStory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38CCE6A2047046200200F33 /* PhotoStory.swift */; };
@@ -76,6 +80,10 @@
 		F3481E91203C5C5600B68183 /* PhotoGalleryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoGalleryViewController.swift; sourceTree = "<group>"; };
 		F35CF5F8205285B400256503 /* GalleryImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryImageView.swift; sourceTree = "<group>"; };
 		F365DC972044410E003CA1C0 /* PhotoStoryLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoStoryLayout.swift; sourceTree = "<group>"; };
+		F36765CC20581E680041F228 /* GroupsFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsFlowLayout.swift; sourceTree = "<group>"; };
+		F36765CE2058204C0041F228 /* ScalingCarouselLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScalingCarouselLayout.swift; sourceTree = "<group>"; };
+		F36765CF2058204C0041F228 /* ScalingCarouselView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScalingCarouselView.swift; sourceTree = "<group>"; };
+		F36765D02058204C0041F228 /* ScalingCarouselCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScalingCarouselCell.swift; sourceTree = "<group>"; };
 		F38CCE652046FE9800200F33 /* EmptyGroupCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyGroupCell.swift; sourceTree = "<group>"; };
 		F38CCE672047039D00200F33 /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
 		F38CCE6A2047046200200F33 /* PhotoStory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoStory.swift; sourceTree = "<group>"; };
@@ -154,6 +162,7 @@
 				F38CCE692047044500200F33 /* Models */,
 				F3E2250C20406AA8007DB05C /* Cells */,
 				F346CA4420501AC700E058D6 /* ViewModel */,
+				F367661320592B9C0041F228 /* ScalingCarousel */,
 				F3E2250B20406A91007DB05C /* ViewController */,
 				F3481E62203B04FA00B68183 /* Assets.xcassets */,
 				F3481E64203B04FA00B68183 /* LaunchScreen.storyboard */,
@@ -182,6 +191,16 @@
 			path = StudioStoryUITests;
 			sourceTree = "<group>";
 		};
+		F367661320592B9C0041F228 /* ScalingCarousel */ = {
+			isa = PBXGroup;
+			children = (
+				F36765D02058204C0041F228 /* ScalingCarouselCell.swift */,
+				F36765CE2058204C0041F228 /* ScalingCarouselLayout.swift */,
+				F36765CF2058204C0041F228 /* ScalingCarouselView.swift */,
+			);
+			path = ScalingCarousel;
+			sourceTree = "<group>";
+		};
 		F38CCE692047044500200F33 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -200,6 +219,7 @@
 				F3481E91203C5C5600B68183 /* PhotoGalleryViewController.swift */,
 				F38CCE6C20480EDB00200F33 /* GroupPreviewFlowLayout.swift */,
 				F3481E8D203C56BA00B68183 /* PhotoPageViewController.swift */,
+				F36765CC20581E680041F228 /* GroupsFlowLayout.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -351,7 +371,9 @@
 				F3D34936204E9BA40022DE9B /* Common.swift in Sources */,
 				F3AE53BF203F18DD007FE50D /* GroupsPreviewViewController.swift in Sources */,
 				F3481E59203B04FA00B68183 /* AppDelegate.swift in Sources */,
+				F36765CD20581E680041F228 /* GroupsFlowLayout.swift in Sources */,
 				F3481E8C203B0DD400B68183 /* PhotosPicker.swift in Sources */,
+				F36765D12058204C0041F228 /* ScalingCarouselLayout.swift in Sources */,
 				F38CCE682047039D00200F33 /* Group.swift in Sources */,
 				F365DC982044410E003CA1C0 /* PhotoStoryLayout.swift in Sources */,
 				F3481E61203B04FA00B68183 /* StudioStory.xcdatamodeld in Sources */,
@@ -360,7 +382,9 @@
 				F38CCE6B2047046200200F33 /* PhotoStory.swift in Sources */,
 				F3AE53C1203F1DAA007FE50D /* GroupPreviewCell.swift in Sources */,
 				F3481E8E203C56BB00B68183 /* PhotoPageViewController.swift in Sources */,
+				F36765D22058204C0041F228 /* ScalingCarouselView.swift in Sources */,
 				F3D349342049A53D0022DE9B /* UIImageColors.swift in Sources */,
+				F36765D32058204C0041F228 /* ScalingCarouselCell.swift in Sources */,
 				F3481E8A203B0A2F00B68183 /* PhotoStoryCell.swift in Sources */,
 				F346CA4820501C4000E058D6 /* PhotoViewModel.swift in Sources */,
 				F3481E92203C5C5600B68183 /* PhotoGalleryViewController.swift in Sources */,
