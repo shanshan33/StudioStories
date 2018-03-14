@@ -13,7 +13,7 @@ enum CellType {
     case NewGroup
 }
 
-class GroupsPreviewViewController: UIViewController, UIScrollViewDelegate, photoViewControllerDelegate{
+class GroupsPreviewViewController: UIViewController, UIScrollViewDelegate, photoViewControllerDelegate, EditGroupsViewControllerDelegate {
 
     @IBOutlet weak var groupCollectionView: ScalingCarouselView!
     
@@ -56,6 +56,12 @@ class GroupsPreviewViewController: UIViewController, UIScrollViewDelegate, photo
                 photoViewController.delegate = self
                 let index = groupCollectionView.indexPathsForSelectedItems?.first
                 photoViewController.groupViewModel = groupViewModels[(index?.row)!]
+            }
+        }
+        if segue.identifier == "editGroups" {
+            if let editViewController = segue.destination as? EditGroupsViewController {
+                editViewController.delegate = self
+                editViewController.groupViewModels = groupViewModels
             }
         }
     }

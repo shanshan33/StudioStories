@@ -28,6 +28,8 @@
 		F36765D12058204C0041F228 /* ScalingCarouselLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36765CE2058204C0041F228 /* ScalingCarouselLayout.swift */; };
 		F36765D22058204C0041F228 /* ScalingCarouselView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36765CF2058204C0041F228 /* ScalingCarouselView.swift */; };
 		F36765D32058204C0041F228 /* ScalingCarouselCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36765D02058204C0041F228 /* ScalingCarouselCell.swift */; };
+		F367661520595FBB0041F228 /* EditGroupsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F367661420595FBB0041F228 /* EditGroupsViewController.swift */; };
+		F3676617205969AF0041F228 /* EditGroupsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3676616205969AF0041F228 /* EditGroupsTableViewCell.swift */; };
 		F38CCE662046FE9800200F33 /* EmptyGroupCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38CCE652046FE9800200F33 /* EmptyGroupCell.swift */; };
 		F38CCE682047039D00200F33 /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38CCE672047039D00200F33 /* Group.swift */; };
 		F38CCE6B2047046200200F33 /* PhotoStory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38CCE6A2047046200200F33 /* PhotoStory.swift */; };
@@ -84,6 +86,8 @@
 		F36765CE2058204C0041F228 /* ScalingCarouselLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScalingCarouselLayout.swift; sourceTree = "<group>"; };
 		F36765CF2058204C0041F228 /* ScalingCarouselView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScalingCarouselView.swift; sourceTree = "<group>"; };
 		F36765D02058204C0041F228 /* ScalingCarouselCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScalingCarouselCell.swift; sourceTree = "<group>"; };
+		F367661420595FBB0041F228 /* EditGroupsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditGroupsViewController.swift; sourceTree = "<group>"; };
+		F3676616205969AF0041F228 /* EditGroupsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditGroupsTableViewCell.swift; sourceTree = "<group>"; };
 		F38CCE652046FE9800200F33 /* EmptyGroupCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyGroupCell.swift; sourceTree = "<group>"; };
 		F38CCE672047039D00200F33 /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
 		F38CCE6A2047046200200F33 /* PhotoStory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoStory.swift; sourceTree = "<group>"; };
@@ -220,6 +224,7 @@
 				F38CCE6C20480EDB00200F33 /* GroupPreviewFlowLayout.swift */,
 				F3481E8D203C56BA00B68183 /* PhotoPageViewController.swift */,
 				F36765CC20581E680041F228 /* GroupsFlowLayout.swift */,
+				F367661420595FBB0041F228 /* EditGroupsViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -230,6 +235,7 @@
 				F3481E89203B0A2F00B68183 /* PhotoStoryCell.swift */,
 				F3AE53C0203F1DAA007FE50D /* GroupPreviewCell.swift */,
 				F38CCE652046FE9800200F33 /* EmptyGroupCell.swift */,
+				F3676616205969AF0041F228 /* EditGroupsTableViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -384,8 +390,10 @@
 				F3481E8E203C56BB00B68183 /* PhotoPageViewController.swift in Sources */,
 				F36765D22058204C0041F228 /* ScalingCarouselView.swift in Sources */,
 				F3D349342049A53D0022DE9B /* UIImageColors.swift in Sources */,
+				F3676617205969AF0041F228 /* EditGroupsTableViewCell.swift in Sources */,
 				F36765D32058204C0041F228 /* ScalingCarouselCell.swift in Sources */,
 				F3481E8A203B0A2F00B68183 /* PhotoStoryCell.swift in Sources */,
+				F367661520595FBB0041F228 /* EditGroupsViewController.swift in Sources */,
 				F346CA4820501C4000E058D6 /* PhotoViewModel.swift in Sources */,
 				F3481E92203C5C5600B68183 /* PhotoGalleryViewController.swift in Sources */,
 				F3322A18205693B80020D9F2 /* PreviewImageView.swift in Sources */,
