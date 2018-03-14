@@ -96,7 +96,7 @@ class GroupsPreviewViewController: UIViewController, UIScrollViewDelegate, photo
 //            snapToNearestVisiableCell(scrollView as! UICollectionView)
 //        }
 //    }
-//git
+//
     func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
         snapToNearestVisiableCell(scrollView as! UICollectionView)
     }
@@ -152,13 +152,13 @@ extension GroupsPreviewViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        if indexPath.row == newGroupIndexPath?.row {
+        if (groupViewModels[indexPath.row].photoViewModels?.isEmpty)! {
             if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "EmptyGroupCell", for: indexPath) as? EmptyGroupCell {
-                cell.groupTitleLabel.text = "New Album"
+                cell.groupTitleLabel.text = groupViewModels[indexPath.row].name ?? "New Album"
                 return cell
             }
         }
-        
+
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "GroupPreviewCell", for: indexPath) as! GroupPreviewCell
         if groupViewModels.count > 0 {
             cell.setCell(groupViewModel: groupViewModels[indexPath.row])
