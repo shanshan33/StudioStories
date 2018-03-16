@@ -8,11 +8,7 @@
 
 import UIKit
 
-protocol dropDownProtocol {
-    func dropDownPressed(string : String)
-}
-
-class DropDownMenuButton: UIButton, dropDownProtocol {
+class DropDownMenuButton: UIButton{//, dropDownProtocol {
     
     func dropDownPressed(string: String) {
         self.setTitle(string, for: .normal)
@@ -23,14 +19,14 @@ class DropDownMenuButton: UIButton, dropDownProtocol {
     
     var height = NSLayoutConstraint()
     
-    override func didMoveToSuperview() {
-        self.superview?.addSubview(dropView)
-        self.superview?.bringSubview(toFront: dropView)
-        dropView.topAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
-        dropView.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
-        dropView.widthAnchor.constraint(equalTo: self.widthAnchor).isActive = true
-        height = dropView.heightAnchor.constraint(equalToConstant: 0)
-    }
+//    override func didMoveToSuperview() {
+//        self.superview?.addSubview(dropView)
+//        self.superview?.bringSubview(toFront: dropView)
+//        dropView.topAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
+//        dropView.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
+//        dropView.widthAnchor.constraint(equalTo: self.widthAnchor).isActive = true
+//        height = dropView.heightAnchor.constraint(equalToConstant: 0)
+//    }
     
     var isOpen = false
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {

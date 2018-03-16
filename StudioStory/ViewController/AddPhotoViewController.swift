@@ -15,8 +15,11 @@ class AddPhotoViewController: UIViewController {
     var photosPicker = PhotosPicker()
     var photoViewModel = PhotoViewModel()
 
+    var groupViewModels: [GroupViewModel] = []
     @IBOutlet weak var selectGroupButton: DropDownMenuButton!
+    @IBOutlet weak var chooseGroupButton: dropDownButton!
     
+    @IBOutlet weak var dropButtonCloseHeight: NSLayoutConstraint!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +27,7 @@ class AddPhotoViewController: UIViewController {
         addPhotoView.layer.cornerRadius = 16
         selectedPhotoImageView.layer.cornerRadius = 10
         selectedPhotoImageView.clipsToBounds = true
+        chooseGroupButton.height = dropButtonCloseHeight
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -35,8 +39,11 @@ class AddPhotoViewController: UIViewController {
 //            self.PhotosCollectionView.reloadData()
 //            self.viewWillLayoutSubviews()
 //        }
+        chooseGroupButton.setTitle(groupViewModels.first?.name, for: .normal)
         setup(photo: photoViewModel)
-
+        chooseGroupButton.widthAnchor.constraint(equalToConstant: 325).isActive = true
+        chooseGroupButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        chooseGroupButton.dropView.dropDownOptions = groupViewModels.map{$0.name!}
     }
     
     private func setup(photo: PhotoViewModel) {
@@ -46,29 +53,10 @@ class AddPhotoViewController: UIViewController {
     @IBAction func dismissViewController(_ sender: UIButton) {
         self.dismiss(animated: true, completion: nil)
     }
-    
-    
-    
+
     private func setNavigationBarAppearence() {
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.isTranslucent = true
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

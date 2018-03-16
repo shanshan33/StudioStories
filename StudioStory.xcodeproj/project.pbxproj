@@ -33,6 +33,7 @@
 		F3676619205AACAC0041F228 /* AddPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3676618205AACAC0041F228 /* AddPhotoViewController.swift */; };
 		F367661B205AD5250041F228 /* DropDownMenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F367661A205AD5250041F228 /* DropDownMenuButton.swift */; };
 		F367661D205AD6490041F228 /* DropDownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F367661C205AD6490041F228 /* DropDownView.swift */; };
+		F367661F205C11500041F228 /* dropDownButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F367661E205C114F0041F228 /* dropDownButton.swift */; };
 		F38CCE662046FE9800200F33 /* EmptyGroupCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38CCE652046FE9800200F33 /* EmptyGroupCell.swift */; };
 		F38CCE682047039D00200F33 /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38CCE672047039D00200F33 /* Group.swift */; };
 		F38CCE6B2047046200200F33 /* PhotoStory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38CCE6A2047046200200F33 /* PhotoStory.swift */; };
@@ -94,6 +95,7 @@
 		F3676618205AACAC0041F228 /* AddPhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPhotoViewController.swift; sourceTree = "<group>"; };
 		F367661A205AD5250041F228 /* DropDownMenuButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownMenuButton.swift; sourceTree = "<group>"; };
 		F367661C205AD6490041F228 /* DropDownView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownView.swift; sourceTree = "<group>"; };
+		F367661E205C114F0041F228 /* dropDownButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dropDownButton.swift; sourceTree = "<group>"; };
 		F38CCE652046FE9800200F33 /* EmptyGroupCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyGroupCell.swift; sourceTree = "<group>"; };
 		F38CCE672047039D00200F33 /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
 		F38CCE6A2047046200200F33 /* PhotoStory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoStory.swift; sourceTree = "<group>"; };
@@ -181,6 +183,7 @@
 				F3D34935204E9BA40022DE9B /* Common.swift */,
 				F367661A205AD5250041F228 /* DropDownMenuButton.swift */,
 				F367661C205AD6490041F228 /* DropDownView.swift */,
+				F367661E205C114F0041F228 /* dropDownButton.swift */,
 			);
 			path = StudioStory;
 			sourceTree = "<group>";
@@ -388,6 +391,7 @@
 				F3481E59203B04FA00B68183 /* AppDelegate.swift in Sources */,
 				F36765CD20581E680041F228 /* GroupsFlowLayout.swift in Sources */,
 				F3481E8C203B0DD400B68183 /* PhotosPicker.swift in Sources */,
+				F367661F205C11500041F228 /* dropDownButton.swift in Sources */,
 				F3676619205AACAC0041F228 /* AddPhotoViewController.swift in Sources */,
 				F36765D12058204C0041F228 /* ScalingCarouselLayout.swift in Sources */,
 				F38CCE682047039D00200F33 /* Group.swift in Sources */,

@@ -59,20 +59,22 @@
                                             <action selector="addPhotoButtonTaped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ybf-v5-CQh"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select a group" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aRd-Jo-iJJ">
-                                        <rect key="frame" x="26" y="86" width="173" height="21"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select a group" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cyz-jj-P7R">
+                                        <rect key="frame" x="25" y="85" width="200" height="21"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="173" id="Xq5-hQ-nCh"/>
+                                            <constraint firstAttribute="height" constant="21" id="cxa-jP-z6q"/>
+                                            <constraint firstAttribute="width" constant="200" id="jTd-ff-a7Q"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ww7-qt-nMx" customClass="DropDownMenuButton" customModule="StudioStory" customModuleProvider="target">
-                                        <rect key="frame" x="25" y="127" width="325" height="50"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2E2-hK-Jvx" customClass="dropDownButton" customModule="StudioStory" customModuleProvider="target">
+                                        <rect key="frame" x="26" y="126" width="325" height="50"/>
+                                        <color key="backgroundColor" red="0.0" green="0.32852089410000002" blue="0.57488495110000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="325" id="6dK-SN-YyK"/>
-                                            <constraint firstAttribute="height" constant="50" id="NWJ-xe-QDA"/>
+                                            <constraint firstAttribute="width" constant="325" id="TcZ-8v-QPW"/>
+                                            <constraint firstAttribute="height" constant="50" id="g2F-oq-SUP"/>
                                         </constraints>
                                         <state key="normal" title="Button" image="DropDown-close"/>
                                     </button>
@@ -80,15 +82,15 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="pbZ-xY-JYr" firstAttribute="top" secondItem="kdg-jS-kqB" secondAttribute="top" constant="-35" id="11g-Yc-p6g"/>
-                                    <constraint firstItem="Ww7-qt-nMx" firstAttribute="top" secondItem="aRd-Jo-iJJ" secondAttribute="bottom" constant="20" id="1LB-AM-j5u"/>
                                     <constraint firstItem="cgs-S2-PWB" firstAttribute="top" secondItem="adc-AC-Aaw" secondAttribute="bottom" constant="4" id="AO2-Pf-prV"/>
                                     <constraint firstItem="pbZ-xY-JYr" firstAttribute="leading" secondItem="kdg-jS-kqB" secondAttribute="leading" constant="26" id="AZi-KS-eho"/>
                                     <constraint firstItem="cgs-S2-PWB" firstAttribute="leading" secondItem="adc-AC-Aaw" secondAttribute="leading" id="Bcw-DT-YU0"/>
-                                    <constraint firstItem="aRd-Jo-iJJ" firstAttribute="leading" secondItem="pbZ-xY-JYr" secondAttribute="leading" id="GSf-YF-dKm"/>
                                     <constraint firstItem="cgs-S2-PWB" firstAttribute="baseline" secondItem="pbZ-xY-JYr" secondAttribute="baseline" id="N1y-Sg-azh"/>
-                                    <constraint firstItem="aRd-Jo-iJJ" firstAttribute="top" secondItem="pbZ-xY-JYr" secondAttribute="bottom" constant="31" id="OYi-Tf-fAx"/>
                                     <constraint firstItem="adc-AC-Aaw" firstAttribute="leading" secondItem="pbZ-xY-JYr" secondAttribute="trailing" constant="25" id="aU3-Ay-XNi"/>
-                                    <constraint firstItem="Ww7-qt-nMx" firstAttribute="centerX" secondItem="kdg-jS-kqB" secondAttribute="centerX" id="lH2-Sr-srT"/>
+                                    <constraint firstItem="cyz-jj-P7R" firstAttribute="leading" secondItem="kdg-jS-kqB" secondAttribute="leading" constant="25" id="cyr-bf-zoz"/>
+                                    <constraint firstItem="2E2-hK-Jvx" firstAttribute="top" secondItem="cyz-jj-P7R" secondAttribute="bottom" constant="20" id="dt7-rh-LMp"/>
+                                    <constraint firstItem="2E2-hK-Jvx" firstAttribute="leading" secondItem="kdg-jS-kqB" secondAttribute="leading" constant="26" id="lwc-qf-sGf"/>
+                                    <constraint firstItem="cyz-jj-P7R" firstAttribute="top" secondItem="pbZ-xY-JYr" secondAttribute="bottom" constant="30" id="ugC-it-wS3"/>
                                     <constraint firstAttribute="bottom" secondItem="fVp-7E-IFo" secondAttribute="bottom" constant="3" id="wqX-B1-xTa"/>
                                 </constraints>
                             </view>
@@ -122,7 +124,8 @@
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="addPhotoView" destination="kdg-jS-kqB" id="c7P-44-q6A"/>
-                        <outlet property="selectGroupButton" destination="Ww7-qt-nMx" id="Ig2-rF-c82"/>
+                        <outlet property="chooseGroupButton" destination="2E2-hK-Jvx" id="Exp-jj-Ihe"/>
+                        <outlet property="dropButtonCloseHeight" destination="g2F-oq-SUP" id="N37-KG-Wes"/>
                         <outlet property="selectedPhotoImageView" destination="pbZ-xY-JYr" id="mff-cH-cko"/>
                     </connections>
                 </viewController>
@@ -981,7 +984,7 @@
                                     <constraint firstAttribute="height" constant="30" id="7g3-Qg-96a"/>
                                     <constraint firstAttribute="width" constant="46" id="TzS-Mp-Isi"/>
                                 </constraints>
-                                <state key="normal">
+                                <state key="normal" title="button">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>

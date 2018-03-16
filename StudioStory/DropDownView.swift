@@ -8,16 +8,21 @@
 
 import UIKit
 
+protocol DropDownViewDelegate: class {
+    func dropDownPressed(string : String)
+}
+
 class DropDownView: UIView, UITableViewDelegate, UITableViewDataSource  {
 
     var dropDownOptions = [String]()
     
     var tableView = UITableView()
     
-    var delegate : dropDownProtocol!
+    var delegate: DropDownViewDelegate?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        
         
         tableView.backgroundColor = UIColor.darkGray
         self.backgroundColor = UIColor.darkGray
@@ -58,7 +63,8 @@ class DropDownView: UIView, UITableViewDelegate, UITableViewDataSource  {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.delegate.dropDownPressed(string: dropDownOptions[indexPath.row])
+        self.delegate?.dropDownPressed(string:dropDownOptions[indexPath.row]
+        )
         self.tableView.deselectRow(at: indexPath, animated: true)
     }
 

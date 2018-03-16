@@ -29,6 +29,7 @@ class GroupsPreviewViewController: UIViewController, UIScrollViewDelegate, photo
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         
         if let addPhotoViewController = storyboard.instantiateViewController(withIdentifier: "AddPhotoViewController") as? AddPhotoViewController {
+            addPhotoViewController.groupViewModels = groupViewModels
             photoViewModel.photosPicker.completionViewController = addPhotoViewController
             photoViewModel.photosPicker.addPhotoNoGroup = true
         }        
@@ -40,7 +41,7 @@ class GroupsPreviewViewController: UIViewController, UIScrollViewDelegate, photo
         super.viewDidLoad()
         
         if groupViewModels.isEmpty {
-            groupViewModels.append(GroupViewModel(name: "Inspiration Studio", photoViewModels: [], numberOfPhotos: 0))
+            groupViewModels.append(GroupViewModel(name: "New Album", photoViewModels: [], numberOfPhotos: 0))
         }
         
         groupCollectionView.translatesAutoresizingMaskIntoConstraints = false
