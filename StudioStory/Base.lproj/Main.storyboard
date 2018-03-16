@@ -11,6 +11,125 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Add Photo View Controller-->
+        <scene sceneID="hA9-NI-IzJ">
+            <objects>
+                <viewController storyboardIdentifier="AddPhotoViewController" id="V90-hv-0WX" customClass="AddPhotoViewController" customModule="StudioStory" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fAh-9w-qKT">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backgroudRetangle" translatesAutoresizingMaskIntoConstraints="NO" id="vDF-gp-Faj">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="364"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="364" id="Xl2-Rv-B8f"/>
+                                </constraints>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kdg-jS-kqB">
+                                <rect key="frame" x="0.0" y="70" width="375" height="597"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pbZ-xY-JYr">
+                                        <rect key="frame" x="26" y="-35" width="90" height="90"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="90" id="Pj2-LL-dgE"/>
+                                            <constraint firstAttribute="height" constant="90" id="rsd-Hl-6h9"/>
+                                        </constraints>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="PinkTitle" translatesAutoresizingMaskIntoConstraints="NO" id="cgs-S2-PWB">
+                                        <rect key="frame" x="141" y="51" width="25" height="4"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add a photo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="adc-AC-Aaw">
+                                        <rect key="frame" x="141" y="19" width="200" height="28"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="28" id="JY1-N9-ksL"/>
+                                            <constraint firstAttribute="width" constant="200" id="qhx-88-Ku2"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fVp-7E-IFo">
+                                        <rect key="frame" x="150" y="520" width="74" height="74"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="74" id="8kH-9z-TYH"/>
+                                            <constraint firstAttribute="width" constant="74" id="Imy-Da-fVS"/>
+                                        </constraints>
+                                        <state key="normal" image="Valid"/>
+                                        <connections>
+                                            <action selector="addPhotoButtonTaped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ybf-v5-CQh"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select a group" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aRd-Jo-iJJ">
+                                        <rect key="frame" x="26" y="86" width="173" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="173" id="Xq5-hQ-nCh"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ww7-qt-nMx" customClass="DropDownMenuButton" customModule="StudioStory" customModuleProvider="target">
+                                        <rect key="frame" x="25" y="127" width="325" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="325" id="6dK-SN-YyK"/>
+                                            <constraint firstAttribute="height" constant="50" id="NWJ-xe-QDA"/>
+                                        </constraints>
+                                        <state key="normal" title="Button" image="DropDown-close"/>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="pbZ-xY-JYr" firstAttribute="top" secondItem="kdg-jS-kqB" secondAttribute="top" constant="-35" id="11g-Yc-p6g"/>
+                                    <constraint firstItem="Ww7-qt-nMx" firstAttribute="top" secondItem="aRd-Jo-iJJ" secondAttribute="bottom" constant="20" id="1LB-AM-j5u"/>
+                                    <constraint firstItem="cgs-S2-PWB" firstAttribute="top" secondItem="adc-AC-Aaw" secondAttribute="bottom" constant="4" id="AO2-Pf-prV"/>
+                                    <constraint firstItem="pbZ-xY-JYr" firstAttribute="leading" secondItem="kdg-jS-kqB" secondAttribute="leading" constant="26" id="AZi-KS-eho"/>
+                                    <constraint firstItem="cgs-S2-PWB" firstAttribute="leading" secondItem="adc-AC-Aaw" secondAttribute="leading" id="Bcw-DT-YU0"/>
+                                    <constraint firstItem="aRd-Jo-iJJ" firstAttribute="leading" secondItem="pbZ-xY-JYr" secondAttribute="leading" id="GSf-YF-dKm"/>
+                                    <constraint firstItem="cgs-S2-PWB" firstAttribute="baseline" secondItem="pbZ-xY-JYr" secondAttribute="baseline" id="N1y-Sg-azh"/>
+                                    <constraint firstItem="aRd-Jo-iJJ" firstAttribute="top" secondItem="pbZ-xY-JYr" secondAttribute="bottom" constant="31" id="OYi-Tf-fAx"/>
+                                    <constraint firstItem="adc-AC-Aaw" firstAttribute="leading" secondItem="pbZ-xY-JYr" secondAttribute="trailing" constant="25" id="aU3-Ay-XNi"/>
+                                    <constraint firstItem="Ww7-qt-nMx" firstAttribute="centerX" secondItem="kdg-jS-kqB" secondAttribute="centerX" id="lH2-Sr-srT"/>
+                                    <constraint firstAttribute="bottom" secondItem="fVp-7E-IFo" secondAttribute="bottom" constant="3" id="wqX-B1-xTa"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xkl-mJ-w9v">
+                                <rect key="frame" x="339" y="34" width="21" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="j78-bX-vTi"/>
+                                    <constraint firstAttribute="width" constant="21" id="w4R-cV-zz9"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="ic_close"/>
+                                <connections>
+                                    <action selector="dismissViewController:" destination="V90-hv-0WX" eventType="touchUpInside" id="ngs-fI-ecO"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="vDF-gp-Faj" firstAttribute="trailing" secondItem="3Gr-SI-GfA" secondAttribute="trailing" id="Ah7-wc-60B"/>
+                            <constraint firstAttribute="trailing" secondItem="kdg-jS-kqB" secondAttribute="trailing" id="GlQ-ej-syc"/>
+                            <constraint firstItem="Xkl-mJ-w9v" firstAttribute="top" secondItem="fAh-9w-qKT" secondAttribute="top" constant="34" id="HbH-c4-BvR"/>
+                            <constraint firstItem="fVp-7E-IFo" firstAttribute="centerX" secondItem="3Gr-SI-GfA" secondAttribute="centerX" id="S7x-yj-Hde"/>
+                            <constraint firstItem="vDF-gp-Faj" firstAttribute="top" secondItem="fAh-9w-qKT" secondAttribute="top" id="VGU-dI-P3N"/>
+                            <constraint firstItem="kdg-jS-kqB" firstAttribute="bottom" secondItem="3Gr-SI-GfA" secondAttribute="bottom" id="VO1-oI-sH3"/>
+                            <constraint firstItem="kdg-jS-kqB" firstAttribute="top" secondItem="3Gr-SI-GfA" secondAttribute="top" constant="50" id="Wbi-sv-JRA"/>
+                            <constraint firstItem="3Gr-SI-GfA" firstAttribute="trailing" secondItem="Xkl-mJ-w9v" secondAttribute="trailing" constant="15" id="kpB-Re-a0H"/>
+                            <constraint firstItem="vDF-gp-Faj" firstAttribute="leading" secondItem="3Gr-SI-GfA" secondAttribute="leading" id="pv4-aa-dgF"/>
+                            <constraint firstItem="kdg-jS-kqB" firstAttribute="leading" secondItem="3Gr-SI-GfA" secondAttribute="leading" id="r0b-dg-Alg"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="3Gr-SI-GfA"/>
+                    </view>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <connections>
+                        <outlet property="addPhotoView" destination="kdg-jS-kqB" id="c7P-44-q6A"/>
+                        <outlet property="selectGroupButton" destination="Ww7-qt-nMx" id="Ig2-rF-c82"/>
+                        <outlet property="selectedPhotoImageView" destination="pbZ-xY-JYr" id="mff-cH-cko"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4WQ-eQ-elm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="304.80000000000001" y="541.97901049475263"/>
+        </scene>
         <!--Photo View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -815,6 +934,9 @@
                                     <constraint firstAttribute="height" constant="74" id="ycP-vL-d45"/>
                                 </constraints>
                                 <state key="normal" backgroundImage="addPhotoButton"/>
+                                <connections>
+                                    <action selector="addPhotoNoGroup:" destination="gwK-il-o6y" eventType="touchUpInside" id="2jZ-oF-hbF"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Yo-Ep-039" userLabel="add group">
                                 <rect key="frame" x="35" y="588" width="36" height="32"/>
@@ -859,7 +981,7 @@
                                     <constraint firstAttribute="height" constant="30" id="7g3-Qg-96a"/>
                                     <constraint firstAttribute="width" constant="46" id="TzS-Mp-Isi"/>
                                 </constraints>
-                                <state key="normal" title="Button">
+                                <state key="normal">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
@@ -924,9 +1046,11 @@
         </scene>
     </scenes>
     <resources>
+        <image name="DropDown-close" width="325" height="50"/>
         <image name="Ic_colorClose" width="32" height="31"/>
         <image name="PinkTitle" width="25" height="4"/>
         <image name="Studio_Skype" width="64" height="92"/>
+        <image name="Valid" width="74" height="74"/>
         <image name="addGroup" width="36" height="32"/>
         <image name="addPhotoButton" width="74" height="74"/>
         <image name="backgroudRetangle" width="375" height="391"/>
@@ -934,6 +1058,7 @@
         <image name="haha" width="3456" height="2304"/>
         <image name="ic_AddPhoto" width="90" height="90"/>
         <image name="ic_Group" width="24" height="20"/>
+        <image name="ic_close" width="21" height="21"/>
         <image name="newidea" width="36" height="39"/>
     </resources>
 </document>

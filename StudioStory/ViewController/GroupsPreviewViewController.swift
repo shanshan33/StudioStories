@@ -13,7 +13,7 @@ enum CellType {
     case NewGroup
 }
 
-class GroupsPreviewViewController: UIViewController, UIScrollViewDelegate, photoViewControllerDelegate, EditGroupsViewControllerDelegate {
+class GroupsPreviewViewController: UIViewController, UIScrollViewDelegate, photoViewControllerDelegate, EditGroupsViewControllerDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     @IBOutlet weak var groupCollectionView: ScalingCarouselView!
     
@@ -21,8 +21,21 @@ class GroupsPreviewViewController: UIViewController, UIScrollViewDelegate, photo
     var selectedIndexPath: IndexPath?
     
     var groupViewModels: [GroupViewModel] = []
-    
     var photoViewModel = PhotoViewModel()
+    var photosPicker = PhotosPicker()
+
+    @IBAction func addPhotoNoGroup(_ sender: UIButton)  {
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        
+        if let addPhotoViewController = storyboard.instantiateViewController(withIdentifier: "AddPhotoViewController") as? AddPhotoViewController {
+            photoViewModel.photosPicker.completionViewController = addPhotoViewController
+            photoViewModel.photosPicker.addPhotoNoGroup = true
+        }        
+            photoViewModel.photosPicker.viewController = self
+            photoViewModel.photosPicker.showActionSheet(from: self)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         

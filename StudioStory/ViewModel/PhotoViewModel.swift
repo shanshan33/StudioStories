@@ -43,5 +43,16 @@ class PhotoViewModel {
             completionHandler(photoViewModel)
         }
     }
+    
+    func fetchPickedPhoto(completionHandler: @escaping (_ photoViewModel: PhotoViewModel?) -> Void) {
+        var photoViewModel = PhotoViewModel()
+        
+        photosPicker.imagePickedBlock = { (image,date) in
+            self.createDate = self.dateToString(date: date)
+            photoViewModel = PhotoViewModel(image: image, createDate: self.createDate!, groupName: "")
+            //      photos.append(photoViewModel)
+            completionHandler(photoViewModel)
+        }
+    }
 
 }

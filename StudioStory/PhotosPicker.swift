@@ -17,6 +17,8 @@ class PhotosPicker: NSObject, UIImagePickerControllerDelegate, UINavigationContr
     
     weak var delegate: PhotoPickerDelegate?
     var viewController: UIViewController?
+    var addPhotoNoGroup: Bool = false
+    var completionViewController: UIViewController?
     
     //MARK: Internal Properties
     var imagePickedBlock: ((UIImage, Date) -> Void)?
@@ -62,7 +64,7 @@ class PhotosPicker: NSObject, UIImagePickerControllerDelegate, UINavigationContr
         
         viewController.present(alertController, animated: true, completion: nil)
     }
-    
+
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         viewController?.dismiss(animated: true, completion: nil)
     }
@@ -74,6 +76,16 @@ class PhotosPicker: NSObject, UIImagePickerControllerDelegate, UINavigationContr
         } else {
             print("Something went wrong")
         }
-        viewController?.dismiss(animated: true, completion: nil)
+        
+        viewController?.dismiss(animated: true, completion: {
+            if self.addPhotoNoGroup {
+                if let addPhotoViewController = self.completionViewController as? AddPhotoViewController {
+                    guard let image = info[UIImagePickerControllerOriginalImage] as? UIImage else {return }
+                    addPhotoViewController.photoViewModel.image = image
+                self.viewController?.present(addPhotoViewController, animated: true, completion: nil)
+                }
+            }
+        })
+
     }
 }
