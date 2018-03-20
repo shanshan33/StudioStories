@@ -20,31 +20,31 @@ class DropDownView: UIView, UITableViewDelegate, UITableViewDataSource  {
     
     var delegate: DropDownViewDelegate?
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        
-        
-        tableView.backgroundColor = UIColor.darkGray
-        self.backgroundColor = UIColor.darkGray
-        
-        
-        tableView.delegate = self
-        tableView.dataSource = self
-        
-        tableView.translatesAutoresizingMaskIntoConstraints = false
-        
-        self.addSubview(tableView)
-        
-        tableView.leftAnchor.constraint(equalTo: self.leftAnchor).isActive = true
-        tableView.rightAnchor.constraint(equalTo: self.rightAnchor).isActive = true
-        tableView.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
-        tableView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
-        
-    }
+//    override init(frame: CGRect) {
+//        super.init(frame: frame)
+//
+//
+//        tableView.backgroundColor = UIColor.darkGray
+//        self.backgroundColor = UIColor.darkGray
+//
+//
+//        tableView.delegate = self
+//        tableView.dataSource = self
+//
+//        tableView.translatesAutoresizingMaskIntoConstraints = false
+//
+//        self.addSubview(tableView)
+//
+//        tableView.leftAnchor.constraint(equalTo: self.leftAnchor).isActive = true
+//        tableView.rightAnchor.constraint(equalTo: self.rightAnchor).isActive = true
+//        tableView.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
+//        tableView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
+//
+//    }
     
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
+//    required init?(coder aDecoder: NSCoder) {
+//        fatalError("init(coder:) has not been implemented")
+//    }
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1

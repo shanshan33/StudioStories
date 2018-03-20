@@ -16,10 +16,10 @@ class AddPhotoViewController: UIViewController {
     var photoViewModel = PhotoViewModel()
 
     var groupViewModels: [GroupViewModel] = []
-    @IBOutlet weak var selectGroupButton: DropDownMenuButton!
-    @IBOutlet weak var chooseGroupButton: dropDownButton!
-    
-    @IBOutlet weak var dropButtonCloseHeight: NSLayoutConstraint!
+    @IBOutlet weak var chooseGroupButton: UIButton!
+    @IBOutlet weak var chooseGroupTableView: UITableView!
+    @IBOutlet weak var descriptionTextField: UITextField!
+    @IBOutlet weak var dropTableviewHeightConstraint: NSLayoutConstraint!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,7 +27,27 @@ class AddPhotoViewController: UIViewController {
         addPhotoView.layer.cornerRadius = 16
         selectedPhotoImageView.layer.cornerRadius = 10
         selectedPhotoImageView.clipsToBounds = true
-        chooseGroupButton.height = dropButtonCloseHeight
+        chooseGroupTableView.layer.borderWidth = 1.0
+        chooseGroupTableView.layer.borderColor = #colorLiteral(red: 0.8763179183, green: 0.8769848943, blue: 0.8764212728, alpha: 1)
+        chooseGroupTableView.layer.cornerRadius = 5
+        chooseGroupButton.contentHorizontalAlignment = .left
+        chooseGroupButton.setTitle(groupViewModels.first?.name, for: .normal)
+        chooseGroupTableView.translatesAutoresizingMaskIntoConstraints = false
+        dropTableviewHeightConstraint.constant = 50
+        
+//        chooseGroupButton = dropDownButton.init(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
+
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        self.chooseGroupTableView.contentInset = UIEdgeInsets(top: 50, left: 0, bottom: 0, right: 0)
+    }
+    @IBAction func clickDropDownMenuAction(_ sender: Any) {
+        UIView.animate(withDuration: 0.5, animations: {
+            self.dropTableviewHeightConstraint.constant = 182
+        }, completion: nil)
+        self.view.layoutIfNeeded()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -39,11 +59,11 @@ class AddPhotoViewController: UIViewController {
 //            self.PhotosCollectionView.reloadData()
 //            self.viewWillLayoutSubviews()
 //        }
-        chooseGroupButton.setTitle(groupViewModels.first?.name, for: .normal)
         setup(photo: photoViewModel)
-        chooseGroupButton.widthAnchor.constraint(equalToConstant: 325).isActive = true
-        chooseGroupButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
-        chooseGroupButton.dropView.dropDownOptions = groupViewModels.map{$0.name!}
+//        chooseGroupButton.widthAnchor.constraint(equalToConstant: 325).isActive = true
+//        chooseGroupButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
+  //      chooseGroupButton.dropView.dropDownOptions = groupViewModels.map{$0.name!}
+  //      chooseGroupButton.dropView.backgroundColor = .red
     }
     
     private func setup(photo: PhotoViewModel) {
@@ -59,4 +79,32 @@ class AddPhotoViewController: UIViewController {
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.isTranslucent = true
     }
+}
+
+extension AddPhotoViewController:  UITableViewDelegate, UITableViewDataSource {
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return groupViewModels.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = UITableViewCell()
+        cell.textLabel?.text = groupViewModels[indexPath.row].name
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        chooseGroupButton.setTitle(groupViewModels[indexPath.row].name, for: .normal)
+        UIView.animate(withDuration: 0.5, animations: {
+            self.dropTableviewHeightConstraint.constant = 50
+        }, completion: nil)
+        self.view.layoutIfNeeded()
+        self.chooseGroupTableView.deselectRow(at: indexPath, animated: true)
+    }
+    
+    
 }

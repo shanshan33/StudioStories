@@ -75,8 +75,8 @@ class DropDownMenuButton: UIButton{//, dropDownProtocol {
         }, completion: nil)
     }
     
-//    required init?(coder aDecoder: NSCoder) {
-//        fatalError("init(coder:) has not been implemented")
-//    }
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 
 }
