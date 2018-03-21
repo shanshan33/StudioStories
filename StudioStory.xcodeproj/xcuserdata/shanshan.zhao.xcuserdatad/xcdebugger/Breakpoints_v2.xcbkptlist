@@ -42,7 +42,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "StudioStory/ViewController/PhotoGalleryViewController.swift"
-            timestampString = "542902441.642985"
+            timestampString = "543333727.0837409"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "94"
@@ -58,7 +58,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "StudioStory/ViewController/PhotoGalleryViewController.swift"
-            timestampString = "542902441.643134"
+            timestampString = "543333727.083806"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "140"
@@ -106,7 +106,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "StudioStory/ViewController/EditGroupsViewController.swift"
-            timestampString = "543322737.862866"
+            timestampString = "543335246.212003"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "44"
@@ -186,7 +186,7 @@
                   moduleName = "StudioStory"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/shanshan.zhao/Documents/StudioStory/StudioStory/ViewModel/PhotoViewModel.swift"
-                  timestampString = "543163459.746379"
+                  timestampString = "543332341.629555"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "48"
@@ -201,7 +201,7 @@
                   moduleName = "StudioStory"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/shanshan.zhao/Documents/StudioStory/StudioStory/ViewModel/PhotoViewModel.swift"
-                  timestampString = "543163459.749068"
+                  timestampString = "543332341.6322269"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "48"
@@ -234,7 +234,7 @@
                   moduleName = "StudioStory"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/shanshan.zhao/Documents/StudioStory/StudioStory/dropDownButton.swift"
-                  timestampString = "543163459.756699"
+                  timestampString = "543332341.6403559"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "72"
@@ -249,7 +249,7 @@
                   moduleName = "StudioStory"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/shanshan.zhao/Documents/StudioStory/StudioStory/dropDownButton.swift"
-                  timestampString = "543163459.7593319"
+                  timestampString = "543332341.645629"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "73"
@@ -368,6 +368,70 @@
             startingLineNumber = "79"
             endingLineNumber = "79"
             landmarkName = "init(coder:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "StudioStory/ViewController/AddPhotoViewController.swift"
+            timestampString = "543335246.213298"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "56"
+            endingLineNumber = "56"
+            landmarkName = "viewWillAppear(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "StudioStory.AddPhotoViewController.clickDropDownMenuAction(Any) -&gt; ()"
+                  moduleName = "StudioStory"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/shanshan.zhao/Documents/StudioStory/StudioStory/ViewController/AddPhotoViewController.swift"
+                  timestampString = "543332341.6956331"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "51"
+                  endingLineNumber = "51"
+                  offsetFromSymbolStart = "19">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in StudioStory.AddPhotoViewController.clickDropDownMenuAction(Any) -&gt; ()"
+                  moduleName = "StudioStory"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/shanshan.zhao/Documents/StudioStory/StudioStory/ViewController/AddPhotoViewController.swift"
+                  timestampString = "543332341.69847"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "52"
+                  endingLineNumber = "52"
+                  offsetFromSymbolStart = "21">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "StudioStory/ViewController/AddPhotoViewController.swift"
+            timestampString = "543335246.213643"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "97"
+            endingLineNumber = "97"
+            landmarkName = "tableView(_:cellForRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

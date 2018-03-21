@@ -21,6 +21,8 @@ class AddPhotoViewController: UIViewController {
     @IBOutlet weak var descriptionTextField: UITextField!
     @IBOutlet weak var dropTableviewHeightConstraint: NSLayoutConstraint!
     
+    @IBOutlet weak var addPhotoScrollView: UIScrollView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setNavigationBarAppearence()
