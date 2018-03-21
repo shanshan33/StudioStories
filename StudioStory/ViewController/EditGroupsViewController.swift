@@ -24,7 +24,7 @@ class EditGroupsViewController: UIViewController {
         setNavigationBarAppearence()
         editGroupsTableView.layer.cornerRadius = 16
         self.navigationController?.navigationBar.isHidden = false
-        editGroupsTableView.isEditing = true
+        editGroupsTableView.isEditing = false
 
         let editButtonItem = UIBarButtonItem(title: "Edit", style: UIBarButtonItemStyle.plain, target: self, action:#selector(showEditing))
         self.navigationItem.rightBarButtonItem = editButtonItem
@@ -57,11 +57,11 @@ class EditGroupsViewController: UIViewController {
     {
         if(editGroupsTableView.isEditing == true) {
             editGroupsTableView.isEditing = false
-            self.navigationItem.rightBarButtonItem?.title = "Done"
+            self.navigationItem.rightBarButtonItem?.title = "Edit"
         }
         else {
             editGroupsTableView.isEditing = true
-            self.navigationItem.rightBarButtonItem?.title = "Edit"
+            self.navigationItem.rightBarButtonItem?.title = "Done"
         }
     }
 }
@@ -70,10 +70,12 @@ extension EditGroupsViewController: UITableViewDelegate {
      func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             groupViewModels.remove(at: indexPath.row)
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+            tableView.deleteRows(at: [indexPath], with: .none)
+            tableView.reloadData()
         }
+//        else if editingStyle == .insert {
+//            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+//        }
     }
     
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
@@ -92,9 +94,10 @@ extension EditGroupsViewController: UITableViewDataSource {
         return cell
     }
     
-//    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCellEditingStyle {
-//        return .delete
-//    }
+    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCellEditingStyle {
+        return .delete
+    }
+    
     
     func tableView(_ tableView: UITableView, shouldIndentWhileEditingRowAt indexPath: IndexPath) -> Bool {
         return false
