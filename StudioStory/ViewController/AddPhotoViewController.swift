@@ -15,12 +15,12 @@ class AddPhotoViewController: UIViewController {
     var photosPicker = PhotosPicker()
     var photoViewModel = PhotoViewModel()
 
+    @IBOutlet weak var characterCountLabel: UILabel!
     var groupViewModels: [GroupViewModel] = []
     @IBOutlet weak var chooseGroupButton: UIButton!
     @IBOutlet weak var chooseGroupTableView: UITableView!
-    @IBOutlet weak var descriptionTextField: UITextField!
     @IBOutlet weak var dropTableviewHeightConstraint: NSLayoutConstraint!
-    
+    @IBOutlet weak var descriptionTextView: UITextView!
     @IBOutlet weak var addPhotoScrollView: UIScrollView!
     
     override func viewDidLoad() {
@@ -28,17 +28,28 @@ class AddPhotoViewController: UIViewController {
         setNavigationBarAppearence()
         addPhotoView.layer.cornerRadius = 16
         selectedPhotoImageView.layer.cornerRadius = 10
+        
         selectedPhotoImageView.clipsToBounds = true
         chooseGroupTableView.layer.borderWidth = 1.0
         chooseGroupTableView.layer.borderColor = #colorLiteral(red: 0.8763179183, green: 0.8769848943, blue: 0.8764212728, alpha: 1)
         chooseGroupTableView.layer.cornerRadius = 5
+        
+        descriptionTextView.layer.borderColor = #colorLiteral(red: 0.8763179183, green: 0.8769848943, blue: 0.8764212728, alpha: 1)
+        descriptionTextView.layer.borderWidth = 1.0
+        descriptionTextView.layer.cornerRadius = 5
+        
+        characterCountLabel.layer.masksToBounds = true
+        characterCountLabel.layer.cornerRadius = 10
+        characterCountLabel.text = "120"
+
         chooseGroupButton.contentHorizontalAlignment = .left
         chooseGroupButton.setTitle(groupViewModels.first?.name, for: .normal)
         chooseGroupTableView.translatesAutoresizingMaskIntoConstraints = false
         dropTableviewHeightConstraint.constant = 50
-        
-//        chooseGroupButton = dropDownButton.init(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
-
+    }
+    
+    func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
+        self.view.endEditing(true)
     }
     
     override func viewDidLayoutSubviews() {
@@ -80,6 +91,42 @@ class AddPhotoViewController: UIViewController {
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.isTranslucent = true
+    }
+}
+
+extension AddPhotoViewController: UITextViewDelegate {
+    
+    func textViewShouldBeginEditing(_ textView: UITextView) -> Bool {
+        return true
+    }
+    
+    func textViewShouldEndEditing(_ textView: UITextView) -> Bool {
+        textView.resignFirstResponder()
+        return true
+    }
+    
+    func textViewDidEndEditing(_ textView: UITextView) {
+        addPhotoScrollView.setContentOffset(.zero, animated: true)
+        textView.resignFirstResponder()
+
+    }
+    
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        let newText = (textView.text as NSString).replacingCharacters(in: range, with: text)
+        if newText.count <= 120 {
+            characterCountLabel.text = "\(120 - newText.count)"
+        }
+        if(text == "\n")  {
+            textView.resignFirstResponder()
+            addPhotoScrollView.setContentOffset(.zero, animated: true)
+            return false
+        }
+        return true
+    }
+    
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        let scrollPoint = CGPoint(x:0, y: 50)
+        addPhotoScrollView.setContentOffset(scrollPoint, animated: true)
     }
 }
 
