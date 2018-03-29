@@ -62,7 +62,7 @@ class GroupsPreviewViewController: UIViewController, UIScrollViewDelegate, photo
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "goToAlbum" {
-            if let photoViewController = segue.destination as? PhotoViewController {
+            if let photoViewController = segue.destination as? GroupDetailsViewController {
                 photoViewController.delegate = self
                 let index = groupCollectionView.indexPathsForSelectedItems?.first
                 photoViewController.groupViewModel = groupViewModels[(index?.row)!]
