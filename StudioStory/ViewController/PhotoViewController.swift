@@ -105,6 +105,12 @@ class PhotoViewController: UIViewController, UIImagePickerControllerDelegate, UI
     }
     
     @IBAction func addPhotoButtonTaped(_ sender: UIButton) {
+        if let addPhotoViewController = storyboard?.instantiateViewController(withIdentifier: "AddPhotoViewController") as? AddPhotoViewController {
+            addPhotoViewController.groupViewModels = [groupViewModel]
+            photoViewModel.photosPicker.completionViewController = addPhotoViewController
+            photoViewModel.photosPicker.addPhotoNoGroup = true
+        }
+        
        photoViewModel.photosPicker.viewController = self
        photoViewModel.photosPicker.showActionSheet(from: self)
     }

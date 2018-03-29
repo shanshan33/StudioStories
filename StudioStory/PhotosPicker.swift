@@ -17,7 +17,6 @@ class PhotosPicker: NSObject, UIImagePickerControllerDelegate, UINavigationContr
     
     weak var delegate: PhotoPickerDelegate?
     var viewController: UIViewController?
-    var addPhotoNoGroup: Bool = false
     var completionViewController: UIViewController?
     
     //MARK: Internal Properties
@@ -78,15 +77,11 @@ class PhotosPicker: NSObject, UIImagePickerControllerDelegate, UINavigationContr
         }
         
         viewController?.dismiss(animated: true, completion: {
-            if self.addPhotoNoGroup {
                 if let addPhotoViewController = self.completionViewController as? AddPhotoViewController {
                     guard let image = info[UIImagePickerControllerOriginalImage] as? UIImage else {return }
                     addPhotoViewController.photoViewModel.image = image
-//                    guard let sourceVC = self.viewController as? GroupsPreviewViewController else {return }
-//                    sourceVC.groupViewModels = addPhotoViewController.groupViewModels
                 self.viewController?.present(addPhotoViewController, animated: true, completion: nil)
                 }
-            }
         })
 
     }

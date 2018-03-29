@@ -25,14 +25,10 @@ class GroupsPreviewViewController: UIViewController, UIScrollViewDelegate, photo
     var photosPicker = PhotosPicker()
 
     @IBAction func addPhotoNoGroup(_ sender: UIButton)  {
-        
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        
-        if let addPhotoViewController = storyboard.instantiateViewController(withIdentifier: "AddPhotoViewController") as? AddPhotoViewController {
+        if let addPhotoViewController = storyboard?.instantiateViewController(withIdentifier: "AddPhotoViewController") as? AddPhotoViewController {
             addPhotoViewController.groupViewModels = groupViewModels
             photoViewModel.photosPicker.completionViewController = addPhotoViewController
-            photoViewModel.photosPicker.addPhotoNoGroup = true
-        }        
+        }
             photoViewModel.photosPicker.viewController = self
             photoViewModel.photosPicker.showActionSheet(from: self)
     }
