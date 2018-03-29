@@ -158,7 +158,7 @@
                                         <rect key="frame" x="151" y="520" width="74" height="74"/>
                                         <state key="normal" image="Valid"/>
                                         <connections>
-                                            <action selector="addPhotoButtonTaped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ybf-v5-CQh"/>
+                                            <action selector="savePhotoAndDismiss:" destination="V90-hv-0WX" eventType="touchUpInside" id="SjX-CG-lcZ"/>
                                         </connections>
                                     </button>
                                 </subviews>

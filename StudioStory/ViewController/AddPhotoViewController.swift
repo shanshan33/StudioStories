@@ -10,6 +10,9 @@ import UIKit
 
 class AddPhotoViewController: UIViewController {
 
+        var newPhotoViewModelBlock: ((PhotoViewModel) -> Void)?
+    
+
     @IBOutlet weak var addPhotoView: UIView!
     @IBOutlet weak var selectedPhotoImageView: UIImageView!
     var photosPicker = PhotosPicker()
@@ -48,6 +51,12 @@ class AddPhotoViewController: UIViewController {
         dropTableviewHeightConstraint.constant = 50
     }
     
+    
+    @IBAction func savePhotoAndDismiss(_ sender: UIButton) {
+    //    self.newPhotoViewModelBlock?(photoViewModel)
+        self.dismiss(animated: true, completion: nil)
+    }
+    
     func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
         self.view.endEditing(true)
     }
@@ -73,10 +82,6 @@ class AddPhotoViewController: UIViewController {
 //            self.viewWillLayoutSubviews()
 //        }
         setup(photo: photoViewModel)
-//        chooseGroupButton.widthAnchor.constraint(equalToConstant: 325).isActive = true
-//        chooseGroupButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
-  //      chooseGroupButton.dropView.dropDownOptions = groupViewModels.map{$0.name!}
-  //      chooseGroupButton.dropView.backgroundColor = .red
     }
     
     private func setup(photo: PhotoViewModel) {
